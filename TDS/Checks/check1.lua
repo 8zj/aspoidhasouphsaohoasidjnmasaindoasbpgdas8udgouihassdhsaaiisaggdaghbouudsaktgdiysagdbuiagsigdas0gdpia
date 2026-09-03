@@ -2,56 +2,124 @@ local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local RunService = game:GetService("RunService")
 
-local player = Players.LocalPlayer
+local Player = Players.LocalPlayer
 
-local BLUE = Color3.fromRGB(0, 170, 255)
-local LIGHT_BLUE = Color3.fromRGB(80, 220, 255)
+local CONFIG = {
+	Timeout = 600,
+	Message = "/PSH Hub",
+	ForceFieldColor = Color3.fromRGB(0, 170, 255),
+	OutlineColor = Color3.fromRGB(80, 220, 255),
+}
 
-local connections = {}
+local State = {
+	Connections = {},
+	CharacterConnections = {},
+	Started = os.clock(),
+}
 
-local timeout = 600
-local started = os.clock()
-
-local Player
-local PlayerGui
-local Content
-local Nametag
-
-local function fail(msg)
-	warn("[ x ] Error Failed: " .. msg)
+local function fail(message)
+	warn("[ x ] " .. message)
 end
 
-local function disconnectAll()
-	for _, connection in ipairs(connections) do
-		if connection then
-			connection:Disconnect()
-		end
+local function disconnect(connection)
+	if connection and connection.Connected then
+		connection:Disconnect()
+	end
+end
+
+local function disconnectList(list)
+	for index, connection in ipairs(list) do
+		disconnect(connection)
+		list[index] = nil
+	end
+end
+
+local function waitForLocalPlayer()
+	local deadline = State.Started + CONFIG.Timeout
+
+	while not Player and os.clock() < deadline do
+		Player = Players.LocalPlayer
+		task.wait(0.1)
 	end
 
-	table.clear(connections)
+	if not Player then
+		fail("LocalPlayer not found")
+		return false
+	end
+
+	return true
+end
+
+local function waitForPlayerGui()
+	local deadline = State.Started + CONFIG.Timeout
+	local playerGui
+
+	repeat
+		playerGui = Player:FindFirstChildOfClass("PlayerGui")
+
+		if playerGui then
+			return playerGui
+		end
+
+		task.wait(0.1)
+	until os.clock() >= deadline
+
+	fail("PlayerGui not found")
+	return nil
+end
+
+local function waitForLoadingScreen(playerGui)
+	local deadline = State.Started + CONFIG.Timeout
+	local content
+
+	repeat
+		local loadingScreen = playerGui:FindFirstChild("LoadingScreen")
+
+		if loadingScreen then
+			content = loadingScreen:FindFirstChild("content")
+		end
+
+		if content then
+			return content
+		end
+
+		task.wait(0.1)
+	until os.clock() >= deadline
+
+	fail("LoadingScreen.content not found")
+	return nil
+end
+
+local function waitForLoadingComplete(content)
+	local deadline = State.Started + CONFIG.Timeout
+
+	while content.Parent and content.Visible do
+		if os.clock() >= deadline then
+			fail("Loading screen timed out")
+			return false
+		end
+
+		task.wait(0.1)
+	end
+
+	return true
 end
 
 local function stylePart(part)
-	if not part:IsA("BasePart") then
+	if not part:IsA("BasePart") or part.Name == "HumanoidRootPart" then
 		return
 	end
-
-	if part.Name == "HumanoidRootPart" then
-		return
-	end
-
-	part.Material = Enum.Material.ForceField
-	part.Color = BLUE
-	part.CastShadow = false
 
 	if part:GetAttribute("BlueFFTransparency") == nil then
 		part:SetAttribute("BlueFFTransparency", part.Transparency)
 	end
+
+	part.Material = Enum.Material.ForceField
+	part.Color = CONFIG.ForceFieldColor
+	part.CastShadow = false
 end
 
-local function addBlueForceField(character)
-	disconnectAll()
-
+local function createHighlight(character)
 	local highlight = character:FindFirstChild("BlueForceField")
 
 	if not highlight then
@@ -60,17 +128,29 @@ local function addBlueForceField(character)
 		highlight.Parent = character
 	end
 
-	highlight.FillColor = BLUE
-	highlight.OutlineColor = LIGHT_BLUE
+	highlight.FillColor = CONFIG.ForceFieldColor
+	highlight.OutlineColor = CONFIG.OutlineColor
 	highlight.FillTransparency = 0.65
 	highlight.OutlineTransparency = 0
 	highlight.DepthMode = Enum.HighlightDepthMode.Occluded
+
+	return highlight
+end
+
+local function addBlueForceField(character)
+	if not character or not character.Parent then
+		return
+	end
+
+	disconnectList(State.CharacterConnections)
+
+	local highlight = createHighlight(character)
 
 	for _, object in ipairs(character:GetDescendants()) do
 		stylePart(object)
 	end
 
-	table.insert(connections, character.DescendantAdded:Connect(function(object)
+	table.insert(State.CharacterConnections, character.DescendantAdded:Connect(function(object)
 		if object:IsA("BasePart") then
 			task.defer(stylePart, object)
 		end
@@ -78,156 +158,184 @@ local function addBlueForceField(character)
 
 	local pulseTime = 0
 
-	table.insert(connections, RunService.RenderStepped:Connect(function(deltaTime)
+	table.insert(State.CharacterConnections, RunService.RenderStepped:Connect(function(deltaTime)
 		if not character.Parent or not highlight.Parent then
+			disconnectList(State.CharacterConnections)
 			return
 		end
 
 		pulseTime += deltaTime * 2.5
 
-		local pulse = (math.sin(pulseTime) + 1) / 2
+		local pulse = (math.sin(pulseTime) + 1) * 0.5
+		local green = 130 + math.floor(pulse * 70)
 
-		highlight.FillTransparency = 0.55 + (pulse * 0.2)
-		highlight.OutlineTransparency = 0.05 + (pulse * 0.2)
+		highlight.FillTransparency = 0.55 + pulse * 0.2
+		highlight.OutlineTransparency = 0.05 + pulse * 0.2
+		highlight.FillColor = Color3.fromRGB(0, green, 255)
 
-		highlight.FillColor = Color3.fromRGB(
+		local partColor = Color3.fromRGB(
 			0,
-			130 + math.floor(pulse * 70),
+			150 + math.floor(pulse * 20),
 			255
 		)
 
 		for _, object in ipairs(character:GetDescendants()) do
 			if object:IsA("BasePart") and object.Name ~= "HumanoidRootPart" then
-				object.Color = Color3.fromRGB(
-					0,
-					150 + math.floor(pulse * 20),
-					255
-				)
+				object.Color = partColor
 			end
 		end
 	end))
 end
 
-repeat
-	Player = Players.LocalPlayer
-	task.wait(0.1)
-until Player or os.clock() - started >= timeout
+local function updateTag()
+	local tag = Player:FindFirstChild("Tag")
 
-if not Player then
-	fail("LocalPlayer not found")
-	return
-end
-
-repeat
-	PlayerGui = Player:FindFirstChildOfClass("PlayerGui")
-	task.wait(0.1)
-until PlayerGui or os.clock() - started >= timeout
-
-if not PlayerGui then
-	fail("PlayerGui not found")
-	return
-end
-
-repeat
-	local LoadingScreen = PlayerGui:FindFirstChild("LoadingScreen")
-
-	if LoadingScreen then
-		Content = LoadingScreen:FindFirstChild("content")
+	if tag and tag:IsA("StringValue") then
+		tag.Value = "Chatty"
 	end
-
-	task.wait(0.1)
-until Content or os.clock() - started >= timeout
-
-if not Content then
-	fail("LoadingScreen.content not found")
-	return
 end
 
-while Content.Parent and Content.Visible do
-	if os.clock() - started >= timeout then
-		fail("Loading screen timed out")
+local function waitForNametag()
+	local deadline = State.Started + CONFIG.Timeout
+	local nametagFolder
+	local nametag
+
+	repeat
+		nametagFolder = Workspace:FindFirstChild("Nametags")
+
+		if nametagFolder then
+			nametag = nametagFolder:FindFirstChild(Player.Name)
+		end
+
+		if nametag then
+			return nametag
+		end
+
+		task.wait(0.1)
+	until os.clock() >= deadline
+
+	fail("Nametag not found for " .. Player.Name)
+	return nil
+end
+
+local function startNametagAnimation(nametag)
+	local display = nametag:FindFirstChild("Display")
+	local frame = display and display:FindFirstChild("Frame")
+	local richText = frame and frame:FindFirstChild("RichText")
+	local text = richText and richText:FindFirstChild("1")
+
+	if not text or not text:IsA("TextLabel") and not text:IsA("TextButton") then
+		fail("Nametag text object not found")
 		return
 	end
 
-	task.wait(0.1)
+	local message = CONFIG.Message
+	local prefixLength = #"/PSH"
+
+	task.spawn(function()
+		while text.Parent do
+			text.Text = ""
+
+			for index = 1, #message do
+				if not text.Parent then
+					return
+				end
+
+				text.Text = message:sub(1, index)
+				task.wait(0.05)
+			end
+
+			task.wait(1)
+
+			for index = #message, prefixLength + 1, -1 do
+				if not text.Parent then
+					return
+				end
+
+				text.Text = message:sub(1, index)
+				task.wait(0.05)
+			end
+
+			task.wait(0.5)
+
+			for index = prefixLength, 1, -1 do
+				if not text.Parent then
+					return
+				end
+
+				text.Text = message:sub(1, index - 1)
+				task.wait(0.05)
+			end
+
+			task.wait(0.5)
+		end
+	end)
+end
+
+local function setupCharacter(character)
+	if not character or not character.Parent then
+		return
+	end
+
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+	if not humanoid then
+		humanoid = character:WaitForChild("Humanoid", 5)
+	end
+
+	if not humanoid then
+		fail("Humanoid not found")
+		return
+	end
+
+	addBlueForceField(character)
+end
+
+if not waitForLocalPlayer() then
+	return
+end
+
+local playerGui = waitForPlayerGui()
+
+if not playerGui then
+	return
+end
+
+local content = waitForLoadingScreen(playerGui)
+
+if not content then
+	return
+end
+
+if not waitForLoadingComplete(content) then
+	return
 end
 
 task.wait(5)
 
-print("[ + ] Passed")
+print("[ + ] Loading Screen Passed.")
 
-local Tag = Player:FindFirstChild("Tag")
+updateTag()
 
-if Tag and Tag:IsA("StringValue") then
-	Tag.Value = "Chatty"
-end
+local nametag = waitForNametag()
 
-repeat
-	Nametag = Workspace:FindFirstChild("Nametags")
-
-	if Nametag then
-		Nametag = Nametag:FindFirstChild(Player.Name)
-	end
-
-	task.wait(0.1)
-until Nametag or os.clock() - started >= timeout
-
-if not Nametag then
-	fail("Nametag not found for " .. Player.Name)
+if not nametag then
 	return
 end
 
-local Text = Nametag.Display.Frame.RichText["1"]
-local Message = "/PSH Hub"
+startNametagAnimation(nametag)
 
-task.spawn(function()
-	while true do
-		if not Text or not Text.Parent then
-			break
-		end
-
-		Text.Text = ""
-
-		for i = 1, #Message do
-			if not Text or not Text.Parent then
-				return
-			end
-
-			Text.Text = Message:sub(1, i)
-			task.wait(0.05)
-		end
-
-		task.wait(1)
-
-		for i = #Message, #"/PSH" + 1, -1 do
-			if not Text or not Text.Parent then
-				return
-			end
-
-			Text.Text = Message:sub(1, i)
-			task.wait(0.05)
-		end
-
-		task.wait(0.5)
-
-		for i = #"/PSH", 1, -1 do
-			if not Text or not Text.Parent then
-				return
-			end
-
-			Text.Text = Message:sub(1, i - 1)
-			task.wait(0.05)
-		end
-
-		task.wait(0.5)
-	end
-end)
-
-if player.Character then
-	addBlueForceField(player.Character)
+if Player.Character then
+	task.spawn(setupCharacter, Player.Character)
 end
 
-player.CharacterAdded:Connect(function(character)
-	character:WaitForChild("Humanoid", 5)
-	addBlueForceField(character)
-end)
+table.insert(State.Connections, Player.CharacterAdded:Connect(function(character)
+	setupCharacter(character)
+end))
+
+table.insert(State.Connections, Player.AncestryChanged:Connect(function(_, parent)
+	if not parent then
+		disconnectList(State.Connections)
+		disconnectList(State.CharacterConnections)
+	end
+end))
