@@ -7,10 +7,6 @@ local RequiredTag = "v2.8.1"
 local function getVersion()
 	local VersionModule = ReplicatedStorage:FindFirstChild("Version")
 
-	if not VersionModule then
-		return nil, "Version module not found"
-	end
-
 	if not VersionModule:IsA("ModuleScript") then
 		return nil, "Version is not a ModuleScript"
 	end
