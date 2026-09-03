@@ -1,9 +1,8 @@
-```lua
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 
--- [ Variables ] --
 
+-- [ Variables ] --
 local Player
 local PlayerGui
 local Content
@@ -13,13 +12,11 @@ local timeout = 600
 local started = os.clock()
 
 -- [ Functions ] --
-
 local function fail(msg)
 	warn("[ x ] Error Failed: " .. msg)
 end
 
 -- [ Loading ] --
-
 repeat
 	Player = Players.LocalPlayer
 	task.wait(0.1)
@@ -69,7 +66,6 @@ task.wait(5)
 print("[ + ] Passed")
 
 -- [ Nametag ] --
-
 local Tag = Player:FindFirstChild("Tag")
 if Tag and Tag:IsA("StringValue") then
 	Tag.Value = "Chatty"
@@ -89,6 +85,7 @@ if not Nametag then
 	fail("Nametag not found for " .. Player.Name)
 	return
 end
+
 
 -- [ Animation ] --
 local Text = Nametag.Display.Frame.RichText["1"]
@@ -118,4 +115,3 @@ while true do
 
 	task.wait(0.5)
 end
-```
