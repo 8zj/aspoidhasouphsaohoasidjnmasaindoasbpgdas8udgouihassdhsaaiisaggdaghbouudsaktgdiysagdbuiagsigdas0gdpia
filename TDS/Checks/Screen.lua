@@ -115,32 +115,3 @@ while true do
 
 	task.wait(0.5)
 end
-
-local function addBlueForceField(character)
-	for _, object in ipairs(character:GetDescendants()) do
-		if object:IsA("BasePart") then
-			object.Material = Enum.Material.ForceField
-			object.Color = Color3.fromRGB(0, 170, 255)
-		end
-	end
-
-	local highlight = character:FindFirstChild("BlueForceField")
-
-	if not highlight then
-		highlight = Instance.new("Highlight")
-		highlight.Name = "BlueForceField"
-		highlight.Parent = character
-	end
-
-	highlight.FillColor = Color3.fromRGB(0, 170, 255)
-	highlight.OutlineColor = Color3.fromRGB(0, 100, 255)
-	highlight.FillTransparency = 0.65
-	highlight.OutlineTransparency = 0
-	highlight.DepthMode = Enum.HighlightDepthMode.Occluded
-end
-
-if player.Character then
-	addBlueForceField(player.Character)
-end
-
-player.CharacterAdded:Connect(addBlueForceField)
