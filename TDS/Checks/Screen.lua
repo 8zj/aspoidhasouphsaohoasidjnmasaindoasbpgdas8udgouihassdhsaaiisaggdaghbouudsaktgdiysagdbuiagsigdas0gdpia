@@ -1,154 +1,121 @@
+```lua
 local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+
+-- [ Variables ] --
+
+local Player
 local PlayerGui
-local LoadingScreen
 local Content
-local Plauer
+local Nametag
 
-local TIMEOUT = 600
-local CHECK_INTERVAL = 0.1
-local START_TIME = os.clock()
+local timeout = 600
+local started = os.clock()
 
-local function errorMessage(message)
-	warn("[ x ] Error Failed: " .. tostring(message))
+-- [ Functions ] --
+
+local function fail(msg)
+	warn("[ x ] Error Failed: " .. msg)
 end
 
-local function timedOut()
-	return os.clock() - START_TIME >= TIMEOUT
-end
+-- [ Loading ] --
 
-while not Player do
-	if timedOut() then
-		errorMessage("Timed out waiting for LocalPlayer")
-		return
-	end
-
+repeat
 	Player = Players.LocalPlayer
+	task.wait(0.1)
+until Player or os.clock() - started >= timeout
 
-	if not Player then
-		task.wait(CHECK_INTERVAL)
-	end
+if not Player then
+	fail("LocalPlayer not found")
+	return
 end
 
-
-while not PlayerGui do
-	if timedOut() then
-		errorMessage("Timed out waiting for PlayerGui")
-		return
-	end
-
+repeat
 	PlayerGui = Player:FindFirstChildOfClass("PlayerGui")
+	task.wait(0.1)
+until PlayerGui or os.clock() - started >= timeout
 
-	if not PlayerGui then
-		task.wait(CHECK_INTERVAL)
-	end
+if not PlayerGui then
+	fail("PlayerGui not found")
+	return
 end
 
-while not Content do
-	if timedOut() then
-		errorMessage("Timed out waiting for LoadingScreen.content")
-		return
-	end
-
-	LoadingScreen = PlayerGui:FindFirstChild("LoadingScreen")
+repeat
+	local LoadingScreen = PlayerGui:FindFirstChild("LoadingScreen")
 
 	if LoadingScreen then
 		Content = LoadingScreen:FindFirstChild("content")
 	end
 
-	if not Content then
-		task.wait(CHECK_INTERVAL)
-	end
-end
+	task.wait(0.1)
+until Content or os.clock() - started >= timeout
 
-local LoadingFinished = false
-while not LoadingFinished do
-	if timedOut() then
-		errorMessage("Loading screen did not finish within 10 minutes")
-		return
-	end
-
-	if not Content.Parent then
-		LoadingFinished = true
-		break
-	end
-
-	local Success, Visible = pcall(function()
-		return Content.Visible
-	end)
-
-	if not Success then
-		errorMessage("Failed to read LoadingScreen.content.Visible")
-		return
-	end
-
-	if Visible == false then
-		LoadingFinished = true
-		break
-	end
-
-	task.wait(CHECK_INTERVAL)
-end
-
-local ConfirmStart = os.clock()
-while os.clock() - ConfirmStart < 1 do
-	if timedOut() then
-		errorMessage("Timed out confirming loading completion")
-		return
-	end
-
-	if Content.Parent then
-		local Success, Visible = pcall(function()
-			return Content.Visible
-		end)
-
-		if Success and Visible then
-			LoadingFinished = false
-
-			while true do
-				if timedOut() then
-					errorMessage("Loading screen did not finish within 10 minutes")
-					return
-				end
-
-				if not Content.Parent then
-					break
-				end
-
-				local CheckSuccess, CheckVisible = pcall(function()
-					return Content.Visible
-				end)
-
-				if not CheckSuccess then
-					errorMessage("Failed to check loading state")
-					return
-				end
-
-				if not CheckVisible then
-					break
-				end
-
-				task.wait(CHECK_INTERVAL)
-			end
-
-			LoadingFinished = true
-			ConfirmStart = os.clock()
-		end
-	end
-
-	task.wait(CHECK_INTERVAL)
-end
-
-if not LoadingFinished then
-	errorMessage("Loading state could not be confirmed")
+if not Content then
+	fail("LoadingScreen.content not found")
 	return
 end
-if timedOut() then
-	errorMessage("Total loading timeout reached")
-	return
+
+while Content.Parent and Content.Visible do
+	if os.clock() - started >= timeout then
+		fail("Loading screen timed out")
+		return
+	end
+
+	task.wait(0.1)
 end
+
 task.wait(5)
-if timedOut() then
-	errorMessage("Timed out during post-loading delay")
+
+print("[ + ] Passed")
+
+-- [ Nametag ] --
+
+local Tag = Player:FindFirstChild("Tag")
+if Tag and Tag:IsA("StringValue") then
+	Tag.Value = "Chatty"
+end
+
+repeat
+	Nametag = Workspace:FindFirstChild("Nametags")
+
+	if Nametag then
+		Nametag = Nametag:FindFirstChild(Player.Name)
+	end
+
+	task.wait(0.1)
+until Nametag or os.clock() - started >= timeout
+
+if not Nametag then
+	fail("Nametag not found for " .. Player.Name)
 	return
 end
-print("[ + ] Passed")
+
+-- [ Animation ] --
+local Text = Nametag.Display.Frame.RichText["1"]
+local Message = "/PSH Hub"
+
+while true do
+	Text.Text = ""
+
+	for i = 1, #Message do
+		Text.Text = Message:sub(1, i)
+		task.wait(0.05)
+	end
+
+	task.wait(1)
+
+	for i = #Message, #"/PSH" + 1, -1 do
+		Text.Text = Message:sub(1, i)
+		task.wait(0.05)
+	end
+
+	task.wait(0.5)
+
+	for i = #"/PSH", 1, -1 do
+		Text.Text = Message:sub(1, i - 1)
+		task.wait(0.05)
+	end
+
+	task.wait(0.5)
+end
+```
