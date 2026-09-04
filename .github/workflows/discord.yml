@@ -1,0 +1,19 @@
+name: Discord Update
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Discord Webhook
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\":\"📦 **Repository Updated!**\\n\\n👤 **Author:** ${{ github.actor }}\\n📝 **Commit:** ${{ github.event.head_commit.message }}\\n🔗 **View:** https://github.com/${{ github.repository }}/commit/${{ github.sha }}\"}" \
+          "$WEBHOOK"
