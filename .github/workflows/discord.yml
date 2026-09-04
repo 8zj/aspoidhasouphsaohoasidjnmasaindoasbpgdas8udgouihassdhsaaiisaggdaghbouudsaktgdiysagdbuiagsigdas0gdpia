@@ -1,4 +1,4 @@
-name: Discord Update
+name: Discord Repository Updates
 
 on:
   push:
@@ -6,14 +6,122 @@ on:
       - main
 
 jobs:
-  notify:
+  discord:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send Discord Webhook
+      - name: Send Discord Notification
         env:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          REPO: ${{ github.repository }}
+          ACTOR: ${{ github.actor }}
+          BRANCH: ${{ github.ref_name }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          COMMIT_SHA: ${{ github.sha }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
+          AVATAR: ${{ github.event.sender.avatar_url }}
         run: |
-          curl -H "Content-Type: application/json" \
-          -d "{\"content\":\"📦 **Repository Updated!**\\n\\n👤 **Author:** ${{ github.actor }}\\n📝 **Commit:** ${{ github.event.head_commit.message }}\\n🔗 **View:** https://github.com/${{ github.repository }}/commit/${{ github.sha }}\"}" \
-          "$WEBHOOK"
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          webhook = os.environ["WEBHOOK"]
+
+          commit_message = os.environ.get("COMMIT_MESSAGE", "No commit message")
+          commit_message = commit_message.strip()
+
+          if len(commit_message) > 1000:
+              commit_message = commit_message[:997] + "..."
+
+          sha = os.environ["COMMIT_SHA"][:7]
+
+          payload = {
+              "username": "GitHub Updates",
+              "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+
+              "embeds": [
+                  {
+                      "title": "✨ Repository Updated",
+                      "description": (
+                          f"**{os.environ['REPO']}** has received a new update."
+                      ),
+
+                      "url": os.environ["COMMIT_URL"],
+
+                      "color": 10181046,
+
+                      "thumbnail": {
+                          "url": os.environ["AVATAR"]
+                      },
+
+                      "fields": [
+                          {
+                              "name": "👤 Author",
+                              "value": f"**{os.environ['ACTOR']}**",
+                              "inline": True
+                          },
+                          {
+                              "name": "🌿 Branch",
+                              "value": f"`{os.environ['BRANCH']}`",
+                              "inline": True
+                          },
+                          {
+                              "name": "🔖 Commit",
+                              "value": f"`{sha}`",
+                              "inline": True
+                          },
+                          {
+                              "name": "📝 Commit Message",
+                              "value": f"```text\n{commit_message}\n```",
+                              "inline": False
+                          }
+                      ],
+
+                      "footer": {
+                          "text": "GitHub • Repository Updates"
+                      },
+
+                      "timestamp": os.environ.get(
+                          "GITHUB_EVENT_TIMESTAMP",
+                          ""
+                      )
+                  }
+              ],
+
+              "components": [
+                  {
+                      "type": 1,
+                      "components": [
+                          {
+                              "type": 2,
+                              "style": 5,
+                              "label": "View Commit",
+                              "url": os.environ["COMMIT_URL"]
+                          },
+                          {
+                              "type": 2,
+                              "style": 5,
+                              "label": "View Repository",
+                              "url": f"https://github.com/{os.environ['REPO']}"
+                          }
+                      ]
+                  }
+              ]
+          }
+
+          data = json.dumps(payload).encode("utf-8")
+
+          request = urllib.request.Request(
+              webhook,
+              data=data,
+              headers={
+                  "Content-Type": "application/json",
+                  "User-Agent": "GitHub-Discord-Webhook"
+              },
+              method="POST"
+          )
+
+          with urllib.request.urlopen(request) as response:
+              print(f"Discord webhook response: {response.status}")
+          PY
