@@ -1,0 +1,229 @@
+-- [[
+-- Towers: Soldier, None, None, None, None
+-- Mode: Casual
+-- GameInfo: Unknown
+-- Map: Retro Crossroads
+-- Modifiers: None
+-- ]]
+
+-- [[ Wave 1 ]] --
+PSH:Place("Soldier", -132.889, -44.536, 22.523)
+PSH:Upgrade(1)
+
+-- [[ Wave 2 ]] --
+PSH:Place("Soldier", -124.992, -44.536, 22.520)
+
+-- [[ Wave 3 ]] --
+PSH:Place("Soldier", -131.251, -44.536, 19.815)
+PSH:Place("Soldier", -126.108, -44.536, 19.667)
+
+-- [[ Wave 4 ]] --
+PSH:Place("Soldier", -135.949, -44.536, 22.929)
+PSH:Place("Soldier", -121.908, -44.536, 22.876)
+
+-- [[ Wave 5 ]] --
+PSH:Place("Soldier", -122.941, -44.536, 19.989)
+PSH:Place("Soldier", -134.536, -44.536, 19.930)
+PSH:Place("Soldier", -125.794, -44.536, 29.206)
+
+-- [[ Wave 6 ]] --
+PSH:Place("Soldier", -131.413, -44.536, 29.387)
+PSH:Place("Soldier", -125.592, -44.486, 32.284)
+PSH:Place("Soldier", -131.481, -44.486, 32.387)
+
+-- [[ Wave 7 ]] --
+PSH:Place("Soldier", -123.005, -44.536, 30.607)
+PSH:Place("Soldier", -134.139, -44.536, 30.930)
+PSH:Upgrade(8)
+PSH:Upgrade(5)
+PSH:Upgrade(3)
+PSH:Upgrade(4)
+PSH:Upgrade(2)
+PSH:Upgrade(6)
+PSH:Upgrade(7)
+
+-- [[ Wave 8 ]] --
+PSH:Upgrade(9)
+PSH:Upgrade(13)
+PSH:Upgrade(11)
+PSH:Upgrade(10)
+PSH:Upgrade(12)
+PSH:Upgrade(14)
+PSH:Place("Soldier", -137.125, -44.536, 30.119)
+PSH:Place("Soldier", -120.050, -44.536, 29.795)
+
+-- [[ Wave 9 ]] --
+PSH:Upgrade(16)
+PSH:Upgrade(15)
+PSH:Place("Soldier", -118.745, -44.536, 22.800)
+PSH:Upgrade(17)
+PSH:Upgrade(16)
+PSH:Upgrade(17)
+PSH:Upgrade(6)
+
+-- [[ Wave 10 ]] --
+PSH:Upgrade(13)
+PSH:Upgrade(9)
+PSH:Upgrade(2)
+PSH:Upgrade(11)
+
+-- [[ Wave 11 ]] --
+PSH:Upgrade(7)
+PSH:Upgrade(4)
+PSH:Place("Soldier", -134.154, -44.486, 33.949)
+PSH:Place("Soldier", -137.238, -44.536, 33.118)
+PSH:Upgrade(19)
+PSH:Upgrade(18)
+
+-- [[ Wave 12 ]] --
+PSH:Upgrade(5)
+PSH:Upgrade(1)
+PSH:Upgrade(3)
+PSH:Upgrade(8)
+
+-- [[ Wave 13 ]] --
+PSH:Place("Soldier", -122.843, -44.536, 33.622)
+PSH:Upgrade(20)
+PSH:Upgrade(20)
+PSH:Place("Soldier", -119.836, -44.536, 32.861)
+PSH:Upgrade(21)
+PSH:Upgrade(21)
+PSH:Place("Soldier", -138.988, -44.536, 23.162)
+PSH:Upgrade(22)
+PSH:Upgrade(22)
+
+-- [[ Wave 14 ]] --
+PSH:Upgrade(12)
+PSH:Upgrade(10)
+PSH:Upgrade(18)
+PSH:Upgrade(14)
+PSH:Upgrade(19)
+PSH:Upgrade(15)
+PSH:Place("Soldier", -134.500, -44.536, 36.998)
+PSH:Upgrade(23)
+PSH:Upgrade(23)
+PSH:Place("Soldier", -123.479, -44.486, 36.609)
+PSH:Upgrade(24)
+PSH:Upgrade(24)
+
+-- [[ Wave 15 ]] --
+PSH:Place("Soldier", -120.505, -44.536, 35.858)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
+PSH:Place("Soldier", -140.207, -44.536, 30.221)
+PSH:Upgrade(26)
+PSH:Upgrade(26)
+PSH:Place("Soldier", -140.306, -44.536, 33.256)
+PSH:Upgrade(27)
+PSH:Upgrade(27)
+PSH:Place("Soldier", -137.709, -44.536, 20.185)
+PSH:Upgrade(28)
+PSH:Upgrade(28)
+
+-- [[ Wave 16 ]] --
+PSH:Place("Soldier", -133.801, -44.486, 39.924)
+PSH:Upgrade(29)
+PSH:Upgrade(29)
+PSH:Place("Soldier", -123.676, -44.536, 39.772)
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+PSH:Place("Soldier", -119.916, -44.536, 19.905)
+PSH:Upgrade(31)
+PSH:Upgrade(31)
+
+-- [[ Wave 17 ]] --
+PSH:Place("Soldier", -120.780, -44.536, 38.908)
+PSH:Upgrade(32)
+PSH:Upgrade(32)
+PSH:Place("Soldier", -132.533, -44.536, 42.726)
+PSH:Upgrade(33)
+PSH:Upgrade(33)
+PSH:Place("Soldier", -125.023, -44.486, 42.468)
+PSH:Upgrade(34)
+PSH:Upgrade(34)
+PSH:Place("Soldier", -135.552, -44.536, 42.605)
+PSH:Upgrade(35)
+PSH:Upgrade(35)
+PSH:Place("Soldier", -121.790, -44.536, 42.345)
+PSH:Upgrade(36)
+PSH:Upgrade(36)
+PSH:Upgrade(2)
+PSH:Upgrade(4)
+
+-- [[ Wave 18 ]] --
+PSH:Upgrade(6)
+PSH:Upgrade(7)
+PSH:Upgrade(17)
+PSH:Upgrade(31)
+
+-- [[ Wave 19 ]] --
+PSH:Upgrade(1)
+PSH:Upgrade(3)
+PSH:Upgrade(33)
+PSH:Upgrade(35)
+PSH:Upgrade(29)
+PSH:Upgrade(23)
+
+-- [[ Wave 20 ]] --
+PSH:Upgrade(12)
+PSH:Upgrade(10)
+PSH:Upgrade(14)
+PSH:Upgrade(18)
+
+-- [[ Wave 21 ]] --
+PSH:Upgrade(19)
+PSH:Upgrade(15)
+PSH:Upgrade(27)
+PSH:Upgrade(26)
+PSH:Upgrade(34)
+PSH:Upgrade(36)
+
+-- [[ Wave 22 ]] --
+PSH:Upgrade(30)
+PSH:Upgrade(32)
+PSH:Upgrade(25)
+PSH:Upgrade(24)
+PSH:Upgrade(20)
+PSH:Upgrade(11)
+PSH:Upgrade(9)
+PSH:Upgrade(13)
+PSH:Upgrade(16)
+PSH:Upgrade(21)
+
+-- [[ Wave 23 ]] --
+PSH:Upgrade(10)
+PSH:Upgrade(33)
+PSH:Upgrade(13)
+PSH:Upgrade(11)
+
+-- [[ Wave 24 ]] --
+PSH:Upgrade(9)
+PSH:Upgrade(20)
+
+-- [[ Wave 25 ]] --
+PSH:Upgrade(16)
+PSH:Upgrade(21)
+PSH:Upgrade(25)
+PSH:Upgrade(24)
+PSH:Upgrade(12)
+PSH:Upgrade(14)
+PSH:Upgrade(18)
+PSH:Upgrade(23)
+PSH:Upgrade(36)
+PSH:Upgrade(30)
+PSH:Upgrade(34)
+PSH:Upgrade(32)
+PSH:Upgrade(17)
+PSH:Upgrade(6)
+PSH:Upgrade(2)
+PSH:Upgrade(31)
+PSH:Upgrade(7)
+PSH:Upgrade(4)
+PSH:Upgrade(3)
+PSH:Upgrade(1)
+PSH:Upgrade(8)
+PSH:Upgrade(28)
+PSH:Upgrade(22)
+PSH:Upgrade(5)
+PSH:Upgrade(8)
+PSH:Upgrade(5)
