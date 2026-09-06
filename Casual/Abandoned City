@@ -1,0 +1,277 @@
+-- [[
+-- Towers: Soldier, None, None, None, None
+-- Mode: Casual
+-- GameInfo: Unknown
+-- Map: Abandoned City
+-- Modifiers: None
+-- ]]
+
+-- [[ Wave 1 ]] --
+PSH:Place("Soldier", -28.439, 3.545, 9.416)
+PSH:Upgrade(1)
+
+-- [[ Wave 2 ]] --
+PSH:Place("Soldier", -31.149, 3.545, 11.621)
+
+-- [[ Wave 3 ]] --
+PSH:Place("Soldier", -31.433, 3.545, 8.626)
+PSH:Place("Soldier", -31.085, 3.545, 5.618)
+
+-- [[ Wave 5 ]] --
+PSH:Place("Soldier", -26.191, 3.545, 11.681)
+PSH:Place("Soldier", -25.378, 3.545, 8.719)
+PSH:Place("Soldier", -24.443, 3.545, 5.795)
+PSH:Upgrade(4)
+PSH:Upgrade(3)
+PSH:Upgrade(2)
+
+-- [[ Wave 6 ]] --
+PSH:Upgrade(1)
+PSH:Upgrade(7)
+PSH:Upgrade(6)
+PSH:Upgrade(5)
+PSH:Upgrade(2)
+PSH:Upgrade(3)
+PSH:Upgrade(4)
+
+-- [[ Wave 7 ]] --
+PSH:Upgrade(1)
+
+-- [[ Wave 8 ]] --
+PSH:Place("Soldier", -23.114, 3.545, 11.223)
+PSH:Upgrade(8)
+PSH:Place("Soldier", -31.858, 3.545, 2.565)
+
+-- [[ Wave 9 ]] --
+PSH:Upgrade(6)
+PSH:Upgrade(5)
+PSH:Upgrade(8)
+PSH:Upgrade(2)
+
+-- [[ Wave 10 ]] --
+PSH:Upgrade(9)
+PSH:Upgrade(9)
+PSH:Place("Soldier", -31.924, 3.545, 14.600)
+
+-- [[ Wave 11 ]] --
+PSH:Upgrade(10)
+PSH:Upgrade(10)
+PSH:Upgrade(10)
+
+-- [[ Wave 12 ]] --
+PSH:Upgrade(3)
+PSH:Place("Soldier", -31.433, 3.545, -0.445)
+PSH:Place("Soldier", -31.542, 3.545, -3.488)
+PSH:Place("Soldier", -31.528, 3.545, -6.528)
+
+-- [[ Wave 13 ]] --
+PSH:Upgrade(11)
+PSH:Upgrade(11)
+PSH:Upgrade(12)
+PSH:Upgrade(12)
+PSH:Upgrade(13)
+PSH:Upgrade(13)
+PSH:Place("Soldier", -35.026, 3.545, 14.679)
+PSH:Upgrade(14)
+PSH:Upgrade(14)
+PSH:Place("Soldier", -23.070, 3.545, 3.046)
+
+-- [[ Wave 14 ]] --
+PSH:Upgrade(15)
+PSH:Upgrade(15)
+PSH:Upgrade(15)
+PSH:Place("Soldier", -23.145, 3.545, 0.008)
+PSH:Place("Soldier", -23.076, 3.545, -3.086)
+PSH:Place("Soldier", -23.267, 3.545, -6.124)
+PSH:Place("Soldier", -23.204, 3.639, -9.149)
+PSH:Upgrade(13)
+
+-- [[ Wave 15 ]] --
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Upgrade(17)
+PSH:Upgrade(18)
+PSH:Upgrade(19)
+PSH:Place("Soldier", -26.327, 3.545, -6.346)
+PSH:Place("Soldier", -28.900, 3.545, -8.204)
+PSH:Upgrade(21)
+PSH:Upgrade(21)
+
+-- [[ Wave 16 ]] --
+PSH:Upgrade(20)
+PSH:Upgrade(20)
+PSH:Upgrade(20)
+PSH:Upgrade(18)
+PSH:Upgrade(19)
+PSH:Place("Soldier", -26.211, 3.545, -9.739)
+PSH:Upgrade(22)
+PSH:Upgrade(22)
+PSH:Place("Soldier", -31.673, 3.539, -9.736)
+PSH:Upgrade(23)
+
+-- [[ Wave 17 ]] --
+PSH:Upgrade(23)
+PSH:Upgrade(23)
+PSH:Upgrade(14)
+PSH:Place("Soldier", -38.519, 3.500, -3.465)
+PSH:Upgrade(4)
+
+-- [[ Wave 18 ]] --
+PSH:Upgrade(9)
+PSH:Upgrade(11)
+PSH:Upgrade(12)
+PSH:Upgrade(24)
+PSH:Upgrade(24)
+PSH:Upgrade(7)
+PSH:Upgrade(5)
+
+-- [[ Wave 19 ]] --
+PSH:Upgrade(8)
+PSH:Upgrade(6)
+PSH:Upgrade(24)
+PSH:Upgrade(7)
+PSH:Upgrade(15)
+
+-- [[ Wave 20 ]] --
+PSH:Upgrade(17)
+PSH:Upgrade(17)
+PSH:Place("Soldier", -38.083, 3.500, -6.479)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
+
+-- [[ Wave 21 ]] --
+PSH:Place("Soldier", -38.067, 3.500, -9.559)
+PSH:Upgrade(26)
+PSH:Upgrade(26)
+PSH:Upgrade(26)
+PSH:Upgrade(18)
+PSH:Upgrade(19)
+PSH:Upgrade(22)
+PSH:Upgrade(21)
+PSH:Upgrade(23)
+
+-- [[ Wave 22 ]] --
+PSH:Place("Soldier", -15.771, 3.560, 5.916)
+PSH:Upgrade(27)
+PSH:Upgrade(27)
+PSH:Upgrade(27)
+PSH:Place("Soldier", -16.335, 3.559, 9.229)
+PSH:Upgrade(28)
+PSH:Upgrade(28)
+PSH:Upgrade(28)
+PSH:Place("Soldier", -16.449, 3.558, 12.512)
+PSH:Upgrade(29)
+PSH:Upgrade(29)
+PSH:Upgrade(29)
+PSH:Place("Soldier", -16.592, 3.555, 15.575)
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+
+-- [[ Wave 23 ]] --
+PSH:Upgrade(22)
+PSH:Upgrade(27)
+PSH:Upgrade(29)
+
+-- [[ Wave 24 ]] --
+PSH:Upgrade(28)
+PSH:Place("Soldier", -16.163, 3.536, -2.434)
+PSH:Upgrade(31)
+PSH:Upgrade(31)
+PSH:Place("Soldier", -12.874, 3.536, -2.390)
+PSH:Upgrade(32)
+PSH:Upgrade(32)
+PSH:Upgrade(31)
+PSH:Upgrade(32)
+PSH:Upgrade(32)
+
+-- [[ Wave 25 ]] --
+PSH:Upgrade(31)
+PSH:Place("Soldier", -9.817, 3.536, -2.387)
+PSH:Upgrade(33)
+PSH:Upgrade(33)
+PSH:Upgrade(33)
+PSH:Place("Soldier", -0.830, 3.542, -1.596)
+PSH:Upgrade(34)
+PSH:Upgrade(34)
+PSH:Upgrade(34)
+PSH:Place("Soldier", -12.989, 3.556, 4.171)
+PSH:Upgrade(35)
+PSH:Upgrade(35)
+PSH:Upgrade(35)
+PSH:Place("Soldier", -9.713, 3.553, 3.980)
+PSH:Upgrade(36)
+PSH:Upgrade(36)
+PSH:Upgrade(36)
+PSH:Upgrade(34)
+PSH:Place("Soldier", -16.008, 3.636, 2.287)
+PSH:Upgrade(37)
+PSH:Upgrade(37)
+PSH:Upgrade(37)
+PSH:Place("Soldier", 2.953, 3.604, -1.355)
+PSH:Upgrade(38)
+PSH:Upgrade(38)
+PSH:Upgrade(38)
+PSH:Place("Soldier", 1.970, 3.560, -4.195)
+PSH:Upgrade(39)
+PSH:Upgrade(39)
+PSH:Place("Soldier", 5.105, 3.634, -4.121)
+PSH:Upgrade(40)
+PSH:Upgrade(40)
+PSH:Sell(40)
+PSH:Sell(38)
+PSH:Sell(34)
+PSH:Sell(39)
+PSH:Place("Soldier", 35.412, 3.535, 17.749)
+PSH:Place("Soldier", 35.891, 3.500, 25.088)
+PSH:Place("Soldier", 32.757, 3.500, 25.089)
+PSH:Place("Soldier", 32.379, 3.535, 18.828)
+PSH:Upgrade(41)
+PSH:Upgrade(41)
+PSH:Upgrade(41)
+PSH:Upgrade(41)
+PSH:Upgrade(42)
+PSH:Upgrade(42)
+PSH:Upgrade(42)
+PSH:Upgrade(42)
+PSH:Upgrade(43)
+PSH:Upgrade(43)
+PSH:Upgrade(43)
+PSH:Upgrade(43)
+PSH:Upgrade(44)
+PSH:Upgrade(44)
+PSH:Upgrade(44)
+PSH:Upgrade(44)
+PSH:Sell(41)
+PSH:Sell(44)
+PSH:Sell(42)
+PSH:Sell(43)
+PSH:Place("Soldier", -13.378, 3.557, 15.400)
+PSH:Upgrade(45)
+PSH:Upgrade(45)
+PSH:Upgrade(45)
+PSH:Upgrade(45)
+PSH:Place("Soldier", -10.029, 3.557, 15.432)
+PSH:Place("Soldier", -6.939, 3.550, 14.261)
+PSH:Upgrade(46)
+PSH:Upgrade(46)
+PSH:Upgrade(46)
+PSH:Upgrade(46)
+PSH:Upgrade(47)
+PSH:Upgrade(47)
+PSH:Upgrade(47)
+PSH:Upgrade(47)
+PSH:Place("Soldier", -7.442, 3.557, 10.967)
+PSH:Upgrade(48)
+PSH:Upgrade(48)
+PSH:Upgrade(48)
+PSH:Upgrade(48)
+PSH:Sell(19)
+PSH:Place("Soldier", -7.579, 3.558, 7.602)
+PSH:Upgrade(49)
+PSH:Upgrade(49)
+PSH:Upgrade(49)
+PSH:Upgrade(49)
