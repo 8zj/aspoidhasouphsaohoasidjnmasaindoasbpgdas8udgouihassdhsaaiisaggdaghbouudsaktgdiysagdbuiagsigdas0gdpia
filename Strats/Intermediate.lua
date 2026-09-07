@@ -44,7 +44,7 @@ getgenv().PickHubLOL = {
             },
             ["Crossroads"] = {
                 Loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindo   asbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Crossroads.lua"
+                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Crossroads.lua"
             },
             ["Simplicity"] = {
                 Loadout = {"Soldier","Shotgunner"},
