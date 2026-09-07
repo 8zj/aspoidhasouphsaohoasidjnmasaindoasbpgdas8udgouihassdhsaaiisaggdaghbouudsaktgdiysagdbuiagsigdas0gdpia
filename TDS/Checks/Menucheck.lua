@@ -65,7 +65,7 @@ local function hop_server()
     pcall(function()
         local cfg = getgenv().PickHubLOL
         if type(cfg) == "table" then opts:SetTeleportData({ PickHubLOL = cfg }) end
-    end)ce
+    end)
     local hopped = pcall(function()
         local url = "https://games.roblox.com/v1/games/"
             .. game.PlaceId
