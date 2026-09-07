@@ -5,7 +5,7 @@ getgenv().PickHubLOL = {
         AutoReturnLobby = true,
         AutoSkip        = false,
         SendWebhook     = false,
-        TimeScale       = 2,
+        TimeScale       = false,
     },
     Mis = {
         AntiLag    = false,
