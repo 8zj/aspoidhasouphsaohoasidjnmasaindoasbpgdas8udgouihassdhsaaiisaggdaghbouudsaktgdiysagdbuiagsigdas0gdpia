@@ -10,63 +10,13 @@ end
 getgenv().PSH_CheckerRunning = true
 
 local LocalPlayer = Players.LocalPlayer
-local Teleporting = false
-local InMatch = false
-local CheckerStart = os.clock()
 
-local function playerGui()
-    return LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui")
-end
-
-local function lobby()
-    local pg = playerGui()
+local function isInLobby()
+    local pg = LocalPlayer and LocalPlayer:FindFirstChild("PlayerGui")
     return pg and pg:FindFirstChild("ReactLobbyHud") ~= nil
 end
 
-local function gameStarted()
-    local pg = playerGui()
-    return pg and pg:FindFirstChild("ReactUniversalHotbar") ~= nil
-end
-
-local function stop(reason)
-    getgenv().PSH_CheckerRunning = false
-
-    if reason then
-        print("[PSH Checker] " .. reason)
-    end
-end
-
-local function validLobbyState()
-    if not getgenv().PSH_CheckerRunning then
-        return false
-    end
-
-    if Teleporting then
-        return false
-    end
-
-    if InMatch then
-        return false
-    end
-
-    if gameStarted() then
-        InMatch = true
-        stop("Match detected")
-        return false
-    end
-
-    if not lobby() then
-        return false
-    end
-
-    return true
-end
-
-local function isPickHubRunning()
-    if not validLobbyState() then
-        return false
-    end
-
+local function isRunning()
     local boot = getgenv().PickHubLOL_Boot
 
     if type(boot) ~= "table" then
@@ -79,6 +29,57 @@ local function isPickHubRunning()
 
     return os.clock() - boot.Heartbeat < 15
 end
+
+local function stopChecker()
+    getgenv().PSH_CheckerRunning = false
+end
+
+repeat
+    task.wait(0.5)
+    LocalPlayer = Players.LocalPlayer
+until game:IsLoaded() and LocalPlayer
+
+if not isInLobby() then
+    print("[PSH Checker] [ Skipping not in lobby ]")
+    stopChecker()
+    return
+end
+
+print("[PSH Checker] Player is in lobby")
+
+if isRunning() then
+    print("[PSH Checker] PickHub is already running")
+    stopChecker()
+    return
+end
+
+print("[PSH Checker] PickHub hasn't started, waiting 1 minute...")
+
+local started = os.clock()
+
+while os.clock() - started < 60 do
+    task.wait(5)
+
+    if not isInLobby() then
+        print("[PSH Checker] [ Skipping not in lobby ]")
+        stopChecker()
+        return
+    end
+
+    if isRunning() then
+        print("[PSH Checker] PickHub started")
+        stopChecker()
+        return
+    end
+end
+
+if not isInLobby() then
+    print("[PSH Checker] [ Skipping not in lobby ]")
+    stopChecker()
+    return
+end
+
+print("[PSH Checker] 1 minute passed, PickHub didn't start")
 
 local function queueBoot()
     pcall(function()
@@ -107,269 +108,62 @@ local function queueBoot()
     end)
 end
 
-local function normalRejoin()
-    if not validLobbyState() then
-        return
+queueBoot()
+
+local options = Instance.new("TeleportOptions")
+
+pcall(function()
+    local config = getgenv().PickHubLOL
+
+    if type(config) == "table" then
+        options:SetTeleportData({
+            PickHubLOL = config
+        })
+    end
+end)
+
+local success = pcall(function()
+    local url =
+        "https://games.roblox.com/v1/games/"
+        .. tostring(game.PlaceId)
+        .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true"
+
+    local response = game:HttpGet(url)
+    local data = HttpService:JSONDecode(response)
+
+    local servers = {}
+
+    for _, server in ipairs(data.data or {}) do
+        if server.id ~= game.JobId
+            and (server.playing or 0) < (server.maxPlayers or 50) then
+
+            servers[#servers + 1] = server.id
+        end
     end
 
-    Teleporting = true
+    if #servers == 0 then
+        error("no servers")
+    end
 
-    queueBoot()
+    local target = servers[math.random(1, #servers)]
 
-    local player = Players.LocalPlayer
-    local options = Instance.new("TeleportOptions")
+    TeleportService:TeleportToPlaceInstance(
+        game.PlaceId,
+        target,
+        LocalPlayer
+    )
+end)
+
+if not success then
+    warn("[PSH Checker] server hop failed, rejoining...")
 
     pcall(function()
-        local config = getgenv().PickHubLOL
-
-        if type(config) == "table" then
-            options:SetTeleportData({
-                PickHubLOL = config
-            })
-        end
-    end)
-
-    print("[PSH Checker] Using normal public-server rejoin")
-
-    local success = pcall(function()
         TeleportService:Teleport(
             game.PlaceId,
-            player,
+            LocalPlayer,
             options
         )
     end)
-
-    if not success then
-        Teleporting = false
-        warn("[PSH Checker] Rejoin failed")
-    end
 end
 
-local function getServers()
-    local success, result = pcall(function()
-        local url =
-            "https://games.roblox.com/v1/games/"
-            .. tostring(game.PlaceId)
-            .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true"
-
-        local response = game:HttpGet(url)
-        local data = HttpService:JSONDecode(response)
-
-        local servers = {}
-
-        for _, server in ipairs(data.data or {}) do
-            local id = server.id
-            local playing = tonumber(server.playing) or 0
-            local maxPlayers = tonumber(server.maxPlayers) or 0
-
-            if id
-                and id ~= game.JobId
-                and maxPlayers > 0
-                and playing < maxPlayers then
-
-                servers[#servers + 1] = {
-                    id = id,
-                    playing = playing,
-                    maxPlayers = maxPlayers
-                }
-            end
-        end
-
-        return servers
-    end)
-
-    if not success or type(result) ~= "table" then
-        return {}
-    end
-
-    return result
-end
-
-local function serverHop()
-    if not validLobbyState() then
-        return
-    end
-
-    local servers = getServers()
-
-    if #servers == 0 then
-        warn("[PSH Checker] No available public servers")
-        normalRejoin()
-        return
-    end
-
-    queueBoot()
-
-    local attempts = math.min(#servers, 5)
-
-    print("[PSH Checker] Found " .. tostring(#servers) .. " available servers")
-
-    for _ = 1, attempts do
-        if not validLobbyState() then
-            return
-        end
-
-        if #servers == 0 then
-            break
-        end
-
-        local index = math.random(1, #servers)
-        local selected = table.remove(servers, index)
-
-        if not selected then
-            continue
-        end
-
-        task.wait(0.5)
-
-        if not validLobbyState() then
-            return
-        end
-
-        Teleporting = true
-
-        print(
-            "[PSH Checker] Joining server "
-            .. tostring(selected.playing)
-            .. "/"
-            .. tostring(selected.maxPlayers)
-        )
-
-        local success = pcall(function()
-            TeleportService:TeleportToPlaceInstance(
-                game.PlaceId,
-                selected.id,
-                LocalPlayer
-            )
-        end)
-
-        if success then
-            return
-        end
-
-        Teleporting = false
-
-        task.wait(2)
-
-        if gameStarted() then
-            InMatch = true
-            stop("Match detected")
-            return
-        end
-    end
-
-    if getgenv().PSH_CheckerRunning
-        and not InMatch
-        and not gameStarted()
-        and lobby() then
-
-        warn("[PSH Checker] Specific server attempts failed")
-        normalRejoin()
-    end
-end
-
-repeat
-    task.wait(0.5)
-    LocalPlayer = Players.LocalPlayer
-until game:IsLoaded() and LocalPlayer
-
-if gameStarted() then
-    InMatch = true
-    stop("Already in-game")
-    return
-end
-
-local waitForLobbyStart = os.clock()
-
-while getgenv().PSH_CheckerRunning do
-    if gameStarted() then
-        InMatch = true
-        stop("Match detected")
-        return
-    end
-
-    if lobby() then
-        break
-    end
-
-    if os.clock() - waitForLobbyStart > 30 then
-        stop("Lobby not detected")
-        return
-    end
-
-    task.wait(0.5)
-end
-
-if not getgenv().PSH_CheckerRunning or InMatch then
-    return
-end
-
-print("[PSH Checker] Player is in lobby")
-print("[PSH Checker] Checking PickHub for 1 minute...")
-
-CheckerStart = os.clock()
-
-while getgenv().PSH_CheckerRunning do
-    if gameStarted() then
-        InMatch = true
-        stop("Match detected")
-        return
-    end
-
-    if not lobby() then
-        task.wait(0.5)
-
-        if gameStarted() then
-            InMatch = true
-            stop("Match detected")
-            return
-        end
-
-        if not lobby() then
-            stop("Player left lobby")
-            return
-        end
-    end
-
-    if isPickHubRunning() then
-        print("[PSH Checker] PickHub started")
-        stop()
-        return
-    end
-
-    if os.clock() - CheckerStart >= 60 then
-        break
-    end
-
-    task.wait(1)
-end
-
-if not getgenv().PSH_CheckerRunning then
-    return
-end
-
-if InMatch or gameStarted() then
-    InMatch = true
-    stop("Match detected")
-    return
-end
-
-if not lobby() then
-    stop("Player left lobby")
-    return
-end
-
-print("[PSH Checker] 1 minute passed, PickHub didn't start")
-
-task.wait(1)
-
-if not getgenv().PSH_CheckerRunning then
-    return
-end
-
-if InMatch or gameStarted() or not lobby() then
-    stop("State changed before server hop")
-    return
-end
-
-serverHop()
+stopChecker()
