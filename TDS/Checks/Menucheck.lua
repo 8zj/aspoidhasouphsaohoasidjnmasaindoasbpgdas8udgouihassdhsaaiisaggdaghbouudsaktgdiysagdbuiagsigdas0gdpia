@@ -1,116 +1,171 @@
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local VirtualUser = game:GetService("VirtualUser")
+
 if getgenv().PSH_CheckerRunning then
-    warn("[PSH Checker] already running - skipping")
+    warn("[PSH Checker] already running")
     return
 end
+
 getgenv().PSH_CheckerRunning = true
 
-local WAIT_TIMEOUT  = 300
-local POLL_INTERVAL = 10 
+local function isRunning()
+    local boot = getgenv().PickHubLOL_Boot
 
-local Players         = game:GetService("Players")
-local TeleportService = game:GetService("TeleportService")
-local HttpService     = game:GetService("HttpService")
+    if type(boot) ~= "table" then
+        return false
+    end
+
+    if type(boot.Heartbeat) ~= "number" then
+        return false
+    end
+
+    return os.clock() - boot.Heartbeat < 15
+end
 
 task.spawn(function()
-    local plr = Players.LocalPlayer
-    while not plr do task.wait(0.5) plr = Players.LocalPlayer end
+    local player = Players.LocalPlayer
+
+    repeat
+        task.wait()
+        player = Players.LocalPlayer
+    until player
+
     pcall(function()
-        local GC = getconnections or get_signal_cons
-        if GC then
-            for _, v in pairs(GC(plr.Idled)) do
-                if v.Disable then v:Disable()
-                elseif v.Disconnect then v:Disconnect() end
+        local connections = getconnections or get_signal_cons
+
+        if connections then
+            for _, connection in pairs(connections(player.Idled)) do
+                if connection.Disable then
+                    connection:Disable()
+                elseif connection.Disconnect then
+                    connection:Disconnect()
+                end
             end
         end
     end)
-    local VU = game:GetService("VirtualUser")
+
     while getgenv().PSH_CheckerRunning do
         task.wait(120)
+
         pcall(function()
-            VU:CaptureController()
-            VU:ClickButton2(Vector2.new())
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new())
         end)
     end
 end)
 
-local function pickhub_running()
-    local b = getgenv().PickHubLOL_Boot
-    return type(b) == "table"
-        and type(b.Heartbeat) == "number"
-        and (os.clock() - b.Heartbeat) < 15
-end
-
-
-local function queue_boot_for_next_server()
+local function queueBoot()
     pcall(function()
-        local q = queue_on_teleport or queueonteleport or queueteleport
+        local queue =
+            queue_on_teleport
+            or queueonteleport
+            or queueteleport
             or (syn and syn.queue_on_teleport)
             or (fluxus and fluxus.queue_on_teleport)
-        if typeof(q) ~= "function" then return end
-        local code = 'pcall(function() '
-            .. 'repeat task.wait() until game:IsLoaded() '
-            .. 'if isfile and isfile("PSHBoot.lua") then loadstring(readfile("PSHBoot.lua"))() end '
-            .. 'end)'
-        q(code)
+
+        if typeof(queue) ~= "function" then
+            return
+        end
+
+        queue([[
+            pcall(function()
+                repeat task.wait() until game:IsLoaded()
+
+                if isfile and isfile("PSHBoot.lua") then
+                    loadstring(readfile("PSHBoot.lua"))()
+                end
+            end)
+        ]])
     end)
 end
 
+local function serverHop()
+    print("[PSH Checker] PickHub didn't start, hopping...")
 
-local function hop_server()
-    print("[PSH Checker] PickHub never started - hopping to another server...")
-    queue_boot_for_next_server()
+    queueBoot()
 
-    local plr = Players.LocalPlayer
-    local opts = Instance.new("TeleportOptions")
+    local player = Players.LocalPlayer
+    local options = Instance.new("TeleportOptions")
+
     pcall(function()
-        local cfg = getgenv().PickHubLOL
-        if type(cfg) == "table" then opts:SetTeleportData({ PickHubLOL = cfg }) end
+        local config = getgenv().PickHubLOL
+
+        if type(config) == "table" then
+            options:SetTeleportData({
+                PickHubLOL = config
+            })
+        end
     end)
-    local hopped = pcall(function()
+
+    local success = pcall(function()
         local url = "https://games.roblox.com/v1/games/"
-            .. game.PlaceId
+            .. tostring(game.PlaceId)
             .. "/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true"
-        local data = HttpService:JSONDecode(game:HttpGet(url))
-        local candidates = {}
-        for _, s in ipairs(data.data or {}) do
-            if s.id ~= game.JobId and (s.playing or 0) < (s.maxPlayers or 50) then
-                table.insert(candidates, s.id)
+
+        local response = game:HttpGet(url)
+        local data = HttpService:JSONDecode(response)
+
+        local servers = {}
+
+        for _, server in ipairs(data.data or {}) do
+            if server.id ~= game.JobId
+                and (server.playing or 0) < (server.maxPlayers or 50) then
+
+                servers[#servers + 1] = server.id
             end
         end
-        if #candidates == 0 then error("no other servers found") end
-        local target = candidates[math.random(1, #candidates)]
-        TeleportService:TeleportToPlaceInstance(game.PlaceId, target, plr)
+
+        if #servers == 0 then
+            error("no servers")
+        end
+
+        local target = servers[math.random(1, #servers)]
+
+        TeleportService:TeleportToPlaceInstance(
+            game.PlaceId,
+            target,
+            player
+        )
     end)
-    if not hopped then
-        warn("[PSH Checker] server list failed - rejoining the game normally")
-        pcall(function() TeleportService:Teleport(game.PlaceId, plr, opts) end)
+
+    if not success then
+        warn("[PSH Checker] server hop failed, rejoining...")
+
+        pcall(function()
+            TeleportService:Teleport(
+                game.PlaceId,
+                player,
+                options
+            )
+        end)
     end
 end
-if not game:IsLoaded() then
-    repeat task.wait(0.5) until game:IsLoaded()
-end
-while not Players.LocalPlayer do
-    task.wait(0.5)
-end
 
-if pickhub_running() then
-    print("[PSH Checker] PickHub already running - continuing")
+repeat
+    task.wait(0.5)
+until game:IsLoaded() and Players.LocalPlayer
+
+if isRunning() then
+    print("[PSH Checker] PickHub is already running")
     getgenv().PSH_CheckerRunning = false
     return
 end
 
-print("[PSH Checker] PickHub not running - waiting up to 5 minutes...")
+print("[PSH Checker] PickHub hasn't started, waiting 1 minute...")
 
-local waited = 0
-while waited < WAIT_TIMEOUT do
-    task.wait(POLL_INTERVAL)
-    waited += POLL_INTERVAL
-    if pickhub_running() then
-        print("[PSH Checker] PickHub started after "
-            .. tostring(waited) .. "s - continuing")
+local started = os.clock()
+
+while os.clock() - started < 60 do
+    task.wait(5)
+
+    if isRunning() then
+        print("[PSH Checker] PickHub started")
         getgenv().PSH_CheckerRunning = false
         return
     end
 end
 
-hop_server()
+print("[PSH Checker] 1 minute passed, PickHub didn't start")
+serverHop()
