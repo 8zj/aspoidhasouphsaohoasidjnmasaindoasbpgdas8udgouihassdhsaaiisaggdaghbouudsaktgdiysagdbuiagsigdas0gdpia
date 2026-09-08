@@ -30,10 +30,6 @@ getgenv().PickHubLOL = {
         MapIndex  = 1,
         Mode      = "Intermediate",
         Maps      = {
-            ["Farm Lands"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Farm%20Lands.lua"
-            },
             ["U-Turn"] = {
                 Loadout = {"Soldier","Shotgunner"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/U-Turn.lua"
