@@ -26,36 +26,41 @@ getgenv().PickHubLOL = {
         macroURL = "",
     },
     GameInfo = {
-        Enabled   = true,
-        MapIndex  = 1,
-        Mode      = "Intermediate",
-        Maps      = {
-            ["U-Turn"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/U-Turn.lua"
+        Enabled  = true,
+        MapIndex = 1, 
+        VIPMap   = "Farm Lands",  -- force this exact map if you own VIP
+        Mode     = "Intermediate",
+        Maps     = {
+            ["Farm Lands"] = {
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Farm%20Lands.lua",
             },
-            [" Necropolis"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Necropolis"
+            ["U-Turn"] = {
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/U-Turn.lua",
+            },
+            ["Necropolis"] = { 
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Necropolis",
             },
             ["Simplicity"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Simplicity.lua"
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Simplicity.lua",
             },
             ["Spring Fever"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever"
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever",
             },
             ["Retro Crossroads"] = {
-                loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Retro%20Crossroads.lua"
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Retro%20Crossroads.lua",
             },
             ["Rocket Arena"] = {
-                loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena"
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena",
             },
         },
-        Modifiers = {}
+        Modifiers = {},
     },
 }
 loadstring(game:HttpGet("http://pickscripthub.xyz/api/execute/tds-multi-map"))()
