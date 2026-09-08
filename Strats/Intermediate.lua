@@ -42,10 +42,6 @@ getgenv().PickHubLOL = {
                 Loadout = {"Soldier","Shotgunner"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Necropolis"
             },
-            ["Crossroads"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Crossroads.lua"
-            },
             ["Simplicity"] = {
                 Loadout = {"Soldier","Shotgunner"},
                 URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Simplicity.lua"
@@ -53,10 +49,6 @@ getgenv().PickHubLOL = {
             ["Spring Fever"] = {
                 Loadout = {"Soldier","Shotgunner"},
                 URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever"
-            },
-            ["Night Station"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Night%20Station.lua"
             },
             ["Toyboard"] = {
                 Loadout = {"Soldier","Shotgunner"},
