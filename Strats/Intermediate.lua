@@ -50,10 +50,6 @@ getgenv().PickHubLOL = {
                 Loadout = {"Soldier","Shotgunner"},
                 URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever"
             },
-            ["Toyboard"] = {
-                Loadout = {"Soldier","Shotgunner"},
-                URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Toyboard"
-            },
             ["Retro Crossroads"] = {
                 loadout = {"Soldier","Shotgunner"},
                 URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Retro%20Crossroads.lua"
