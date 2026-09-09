@@ -66,6 +66,7 @@ PSH:Upgrade(12)
 
 -- [[ Wave 16 ]] --
 PSH:Place("DJ Booth", 9.184, 1.000, -1.842)
+PSH:SetOption(1, "Track", "Green")
 PSH:Upgrade(15)
 PSH:Upgrade(15)
 PSH:Upgrade(14)
@@ -250,6 +251,7 @@ PSH:Upgrade(33)
 PSH:Upgrade(18)
 
 -- [[ Wave 35 ]] --
+PSH:SetOption(4, "Track", "Red")
 PSH:Upgrade(31)
 PSH:Upgrade(28)
 PSH:Upgrade(29)
