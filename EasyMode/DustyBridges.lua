@@ -1,0 +1,204 @@
+PSH:Ready()
+PSH:Place("Scout", 18.75849151611328, 26.341772079467773, -157.73374938964844, true)
+PSH:Place("Scout", 5.290005683898926, 28.15045738220215, -148.30845642089844, true)
+PSH:Place("Scout", 3.7225751876831055, 28.28731346130371, -153.92428588867188, true)
+PSH:Place("Scout", 3.8713607788085938, 28.23371696472168, -148.4324493408203, true)
+
+-- [ Wave 1 ] --
+PSH:Upgrade(2)
+PSH:Upgrade(4)
+PSH:Upgrade(3)
+
+-- [ Wave 2 ] --
+PSH:Upgrade(1)
+PSH:Upgrade(2)
+
+-- [ Wave 3 ] --
+PSH:Upgrade(4)
+PSH:Upgrade(3)
+
+-- [ Wave 4 ] --
+PSH:Upgrade(1)
+
+-- [ Wave 5 ] --
+PSH:Place("Scout", 17.578035354614258, 27.320615768432617, -150.5877227783203, true)
+PSH:Place("Scout", 19.004484176635742, 27.337039947509766, -150.53489685058594, true)
+PSH:Place("Scout", 20.450923919677734, 27.347841262817383, -150.59170532226562, true)
+PSH:Place("Scout", 17.185760498046875, 27.154142379760742, -152.04510498046875, true)
+PSH:Place("Scout", 18.640363693237305, 27.325977325439453, -152.31617736816406, true)
+PSH:Place("Scout", 20.343151092529297, 27.340299606323242, -152.4911346435547, true)
+
+-- [ Wave 6 ] --
+PSH:Place("Scout", 17.349876403808594, 26.945768356323242, -153.8089599609375, true)
+PSH:Place("Scout", 19.213218688964844, 27.226579666137695, -154.18177795410156, true)
+PSH:Place("Scout", 17.732513427734375, 26.635183334350586, -155.69480895996094, true)
+PSH:Place("Scout", 19.729572296142578, 26.78593635559082, -156.133544921875, true)
+PSH:Place("Scout", 17.781070709228516, 27.338241577148438, -145.3791961669922, true)
+PSH:Place("Scout", 19.16715431213379, 27.345354080200195, -145.30674743652344, true)
+PSH:Place("Scout", 20.490856170654297, 27.351186752319336, -145.39071655273438, true)
+PSH:Place("Scout", 21.799755096435547, 27.356595993041992, -145.36265563964844, true)
+PSH:Place("Scout", 20.17521858215332, 27.34644889831543, -143.61090087890625, true)
+PSH:Place("Scout", 21.67911148071289, 27.352699279785156, -143.59774780273438, true)
+PSH:Place("Scout", 20.443450927734375, 27.263368606567383, -154.7002410888672, true)
+
+-- [ Wave 7 ] --
+PSH:Place("Scout", 21.683563232421875, 27.05818748474121, -156.097900390625, true)
+PSH:Place("Scout", 23.422883987426758, 27.363372802734375, -145.3655242919922, true)
+PSH:Place("Scout", 23.16812515258789, 27.342885971069336, -144.03575134277344, true)
+PSH:Place("Scout", 24.528202056884766, 27.292051315307617, -143.33377075195312, true)
+PSH:Upgrade(13)
+PSH:Upgrade(13)
+PSH:Upgrade(11)
+PSH:Upgrade(11)
+PSH:Upgrade(8)
+PSH:Upgrade(8)
+PSH:Upgrade(5)
+PSH:Upgrade(5)
+
+-- [ Wave 8 ] --
+PSH:Upgrade(6)
+PSH:Upgrade(6)
+PSH:Upgrade(6)
+PSH:Upgrade(9)
+PSH:Upgrade(9)
+PSH:Upgrade(12)
+
+-- [ Wave 9 ] --
+PSH:Upgrade(12)
+PSH:Upgrade(15)
+PSH:Upgrade(15)
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Upgrade(17)
+
+-- [ Wave 10 ] --
+PSH:Upgrade(17)
+PSH:Upgrade(19)
+PSH:Upgrade(19)
+PSH:Upgrade(18)
+PSH:Upgrade(18)
+PSH:Upgrade(20)
+PSH:Upgrade(20)
+PSH:Upgrade(23)
+PSH:Upgrade(23)
+PSH:Upgrade(24)
+PSH:Upgrade(24)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
+
+-- [ Wave 11 ] --
+PSH:Upgrade(14)
+PSH:Upgrade(14)
+PSH:Upgrade(7)
+PSH:Upgrade(7)
+PSH:Upgrade(10)
+PSH:Upgrade(10)
+PSH:Upgrade(21)
+PSH:Upgrade(21)
+PSH:Upgrade(22)
+PSH:Upgrade(22)
+
+-- [ Wave 12 ] --
+PSH:Place("Scout", 4.478213310241699, 28.156497955322266, -147.26609802246094, true)
+PSH:Place("Scout", 5.470554351806641, 28.045751571655273, -146.2838897705078, true)
+PSH:Place("Scout", 2.867210865020752, 28.24424171447754, -147.2503662109375, true)
+PSH:Place("Scout", 3.6180906295776367, 28.140459060668945, -145.43951416015625, true)
+PSH:Place("Scout", 2.0184106826782227, 28.22918701171875, -145.5132293701172, true)
+PSH:Place("Scout", 4.440138816833496, 28.066265106201172, -144.01242065429688, true)
+PSH:Place("Scout", 2.737508773803711, 28.12636375427246, -143.65838623046875, true)
+PSH:Place("Scout", 0.28960704803466797, 28.187389373779297, -144.4287872314453, true)
+PSH:Place("Scout", 0.4658689498901367, 28.28941535949707, -146.00863647460938, true)
+PSH:Place("Scout", 1.1623244285583496, 28.333110809326172, -147.65029907226562, true)
+PSH:Place("Scout", 2.6112942695617676, 28.11134147644043, -155.29238891601562, true)
+PSH:Place("Scout", 1.8845958709716797, 28.275964736938477, -153.74612426757812, true)
+PSH:Place("Scout", 1.2634968757629395, 27.935365676879883, -156.57371520996094, true)
+PSH:Place("Scout", 0.785524845123291, 28.11507797241211, -155.02127075195312, true)
+PSH:Place("Scout", -0.24900507926940918, 28.24068832397461, -153.79922485351562, true)
+PSH:Upgrade(37)
+PSH:Upgrade(37)
+
+-- [ Wave 13 ] --
+PSH:Upgrade(36)
+PSH:Upgrade(36)
+PSH:Upgrade(39)
+PSH:Upgrade(39)
+PSH:Upgrade(40)
+PSH:Upgrade(40)
+PSH:Upgrade(38)
+PSH:Upgrade(38)
+PSH:Upgrade(35)
+PSH:Upgrade(35)
+PSH:Upgrade(28)
+PSH:Upgrade(28)
+PSH:Upgrade(26)
+PSH:Upgrade(26)
+PSH:Upgrade(27)
+PSH:Upgrade(27)
+PSH:Upgrade(31)
+PSH:Upgrade(31)
+PSH:Upgrade(29)
+PSH:Upgrade(29)
+
+-- [ Wave 14 ] --
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+PSH:Upgrade(34)
+PSH:Upgrade(34)
+PSH:Upgrade(33)
+PSH:Upgrade(33)
+PSH:Upgrade(32)
+PSH:Upgrade(32)
+PSH:Upgrade(5)
+PSH:Upgrade(5)
+
+-- [ Wave 15 ] --
+PSH:Upgrade(6)
+PSH:Upgrade(7)
+PSH:Upgrade(7)
+
+-- [ Wave 16 ] --
+PSH:Upgrade(8)
+PSH:Upgrade(8)
+PSH:Upgrade(9)
+
+-- [ Wave 17 ] --
+PSH:Upgrade(9)
+PSH:Upgrade(10)
+PSH:Upgrade(10)
+
+-- [ Wave 18 ] --
+PSH:Upgrade(11)
+PSH:Upgrade(11)
+PSH:Upgrade(12)
+PSH:Upgrade(12)
+
+-- [ Wave 19 ] --
+PSH:Upgrade(13)
+PSH:Upgrade(13)
+PSH:Upgrade(21)
+PSH:Upgrade(21)
+PSH:Upgrade(14)
+
+-- [ Wave 20 ] --
+PSH:Upgrade(14)
+PSH:Upgrade(1)
+PSH:Upgrade(22)
+PSH:Upgrade(22)
+PSH:Upgrade(15)
+PSH:Upgrade(15)
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Upgrade(17)
+PSH:Upgrade(17)
+PSH:Upgrade(18)
+PSH:Upgrade(18)
+PSH:Upgrade(23)
+PSH:Upgrade(23)
+PSH:Upgrade(19)
+PSH:Upgrade(19)
+PSH:Upgrade(20)
+PSH:Upgrade(20)
+PSH:Upgrade(24)
+PSH:Upgrade(24)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
