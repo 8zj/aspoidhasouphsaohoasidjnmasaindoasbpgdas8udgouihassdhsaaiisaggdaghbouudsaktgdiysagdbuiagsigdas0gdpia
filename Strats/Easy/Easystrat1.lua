@@ -31,11 +31,11 @@ getgenv().PickHubLOL = {
         VIPMap   = "",
         Mode      = "Easy",
         Maps      = {
-            ["GrassIsle"] = {
+            ["Grass Isle"] = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/GrassIsle.lua"
             },
-            ["DustyBridges"] = {
+            ["Dusty Bridges"] = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/DustyBridges.lua"
             },
@@ -43,11 +43,11 @@ getgenv().PickHubLOL = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/CrossRoads.lua"
             },
-            ["ConstructionCrazy"] = {
+            ["Construction Crazy"] = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/ConstructionCrazy.lua"
             },
-            ["AbyssalTrench"] = {
+            ["Abyssal Trench"] = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/AbyssalTrench.lua"
             },
