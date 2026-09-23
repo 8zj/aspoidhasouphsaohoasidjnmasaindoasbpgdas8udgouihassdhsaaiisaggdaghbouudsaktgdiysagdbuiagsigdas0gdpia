@@ -61,7 +61,7 @@ getgenv().PickHubLOL = {
             },
             ["Rocket Arena"] = {
                 Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://github.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/blob/main/Intermediate/NTS/Construction%20Crazy.lua",
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/main/Intermediate/NTS/Construction%20Crazy.lua",
         },
         Modifiers = {},
     },
