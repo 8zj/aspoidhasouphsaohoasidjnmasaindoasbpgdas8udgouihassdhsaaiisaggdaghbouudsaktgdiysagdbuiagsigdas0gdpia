@@ -150,12 +150,6 @@ repeat
     task.wait(0.5)
 until game:IsLoaded() and Players.LocalPlayer
 
-if isInGame() then
-    print("[PSH Checker] [ Skipping in game ]")
-    getgenv().PSH_CheckerRunning = false
-    return
-end
-
 if isRunning() then
     print("[PSH Checker] PickHub is already running")
     getgenv().PSH_CheckerRunning = false
