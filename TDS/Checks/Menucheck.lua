@@ -10,31 +10,6 @@ end
 
 getgenv().PSH_CheckerRunning = true
 
-local function getGameState()
-    local player = Players.LocalPlayer
-    if not player then
-        return "UNKNOWN"
-    end
-
-    local gui = player:FindFirstChildOfClass("PlayerGui")
-    if not gui then
-        return "UNKNOWN"
-    end
-
-    if gui:FindFirstChild("ReactUniversalHotbar") then
-        return "GAME"
-    end
-
-    if gui:FindFirstChild("ReactLobbyHud") then
-        return "LOBBY"
-    end
-
-    return "UNKNOWN"
-end
-
-local function isInGame()
-    return getGameState() == "GAME"
-end
 
 local function isRunning()
     local boot = getgenv().PickHubLOL_Boot
