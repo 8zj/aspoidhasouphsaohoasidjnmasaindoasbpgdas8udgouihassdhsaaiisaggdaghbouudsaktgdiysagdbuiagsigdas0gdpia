@@ -39,10 +39,6 @@ getgenv().PickHubLOL = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/DustyBridges.lua"
             },
-            ["Crossroads"] = {
-                Loadout = {"Scout"},
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/CrossRoads.lua"
-            },
             ["Construction Crazy"] = {
                 Loadout = {"Scout"},
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/ConstructionCrazy.lua"
