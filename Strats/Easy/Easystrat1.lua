@@ -48,8 +48,12 @@ getgenv().PickHubLOL = {
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/ConstructionCrazy.lua"
             },
             ["Abyssal Trench"] = {
-                Loadout = {"Scout"},
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/AbyssalTrench.lua"
+              Loadout = {"Scout"},
+              URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/AbyssalTrench.lua"
+            },
+            ["Pier Pressure"] = {
+              Loadout = {"Scout"},
+              URL = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/EasyMode/Pier%20Pressure.lua"
             },
         },
         Modifiers = {}
