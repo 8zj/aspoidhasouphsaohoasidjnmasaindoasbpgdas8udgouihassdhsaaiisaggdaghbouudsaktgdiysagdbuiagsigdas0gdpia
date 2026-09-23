@@ -41,7 +41,7 @@ getgenv().PickHubLOL = {
             },
             ["Necropolis"] = { 
                 Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Necropolis",
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Necropolis.lua",
             },
             ["Simplicity"] = {
                 Loadout = { "Soldier", "Shotgunner" },
@@ -49,7 +49,7 @@ getgenv().PickHubLOL = {
             },
             ["Spring Fever"] = {
                 Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever",
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever.lua",
             },
             ["Retro Crossroads"] = {
                 Loadout = { "Soldier", "Shotgunner" },
@@ -57,8 +57,11 @@ getgenv().PickHubLOL = {
             },
             ["Rocket Arena"] = {
                 Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena",
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena.lua",
             },
+            ["Rocket Arena"] = {
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://github.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/blob/main/Intermediate/NTS/Construction%20Crazy.lua",
         },
         Modifiers = {},
     },
