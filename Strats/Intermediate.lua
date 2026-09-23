@@ -59,7 +59,7 @@ getgenv().PickHubLOL = {
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena.lua",
             },
-            ["Rocket Arena"] = {
+            ["Construction Crazy"] = {
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/main/Intermediate/NTS/Construction%20Crazy.lua",
         },
