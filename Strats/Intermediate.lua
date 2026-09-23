@@ -31,37 +31,34 @@ getgenv().PickHubLOL = {
         VIPMap   = "",  -- force this exact map if you own VIP
         Mode     = "Intermediate",
         Maps     = {
-            ["Farm Lands"] = {
+            ["Farm Lands"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Farm%20Lands.lua",
             },
-            ["U-Turn"] = {
+            ["U-Turn"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/U-Turn.lua",
             },
-            ["Necropolis"] = { 
+            ["Necropolis"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Necropolis.lua",
             },
-            ["Simplicity"] = {
+            ["Simplicity"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Simplicity.lua",
             },
-            ["Spring Fever"] = {
+            ["Spring Fever"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever.lua",
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Spring%20Fever",
             },
-            ["Retro Crossroads"] = {
+            ["Retro Crossroads"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Retro%20Crossroads.lua",
             },
-            ["Rocket Arena"] = {
+            ["Rocket Arena"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena.lua",
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena",
             },
-            ["Construction Crazy"] = {
-                Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/main/Intermediate/NTS/Construction%20Crazy.lua",
         },
         Modifiers = {},
     },
