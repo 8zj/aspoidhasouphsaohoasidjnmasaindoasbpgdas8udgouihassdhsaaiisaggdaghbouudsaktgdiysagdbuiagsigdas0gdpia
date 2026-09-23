@@ -1,208 +1,131 @@
-PSH:Place("Scout", -26.86444854736328, 0.44747909903526306, -7.249619483947754)
-PSH:Place("Scout", -27.097000122070312, 0.4474807679653168, -14.294904708862305)
-PSH:Place("Scout", -23.97632598876953, 0.4474809169769287, -13.941307067871094)
+-- [[ Wave 1 ]] --
+PSH:Place("Scout", -27.855, 0.447, -14.102)
+PSH:Place("Scout", -27.336, 0.447, -7.569)
+PSH:Place("Scout", -24.639, 0.447, -14.142)
+PSH:Place("Scout", -24.049, 0.447, -7.421)
 
--- [ Wave 1 ] --
-PSH:Place("Scout", -23.767047882080078, 0.44747933745384216, -7.775708198547363)
-
--- [ Wave 2 ] --
-PSH:Place("Scout", -20.73382568359375, 0.44748133420944214, -14.058540344238281)
-PSH:Place("Scout", -17.543193817138672, 0.4474811851978302, -13.961531639099121)
-
--- [ Wave 3 ] --
-PSH:Place("Scout", -25.11516571044922, 0.44748204946517944, -17.346132278442383, true)
-PSH:Place("Scout", -23.739402770996094, 0.4474819302558899, -17.364200592041016, true)
-PSH:Place("Scout", -22.16714859008789, 0.4474819004535675, -16.887290954589844, true)
-
--- [ Wave 4 ] --
-PSH:Place("Scout", -20.36231231689453, 0.44748201966285706, -17.271787643432617, true)
-PSH:Place("Scout", -24.67483901977539, 0.4474834203720093, -19.235280990600586, true)
-PSH:Place("Scout", -22.89783477783203, 0.44748276472091675, -19.20673942565918, true)
-PSH:Place("Scout", -21.530418395996094, 0.447482705116272, -19.280044555664062, true)
-PSH:Place("Scout", -19.716533660888672, 0.4474828243255615, -19.48431396484375, true)
-PSH:Place("Scout", -18.132648468017578, 0.4474821388721466, -16.905195236206055, true)
-
--- [ Wave 5 ] --
-PSH:Place("Scout", -25.074703216552734, 0.4474826753139496, -18.16034507751465, true)
-PSH:Place("Scout", -23.329917907714844, 0.4474823772907257, -18.344024658203125, true)
-PSH:Place("Scout", -22.350643157958984, 0.44748231768608093, -18.340179443359375, true)
-PSH:Place("Scout", -21.44348907470703, 0.4474823474884033, -18.26763153076172, true)
-PSH:Place("Scout", -20.282733917236328, 0.44748246669769287, -18.392974853515625, true)
-PSH:Place("Scout", -19.070018768310547, 0.4474826455116272, -18.423152923583984, true)
-PSH:Place("Scout", -18.182491302490234, 0.44748273491859436, -18.732629776000977, true)
-PSH:Place("Scout", -18.788902282714844, 0.4474824368953705, -17.734094619750977, true)
-PSH:Place("Scout", -16.889144897460938, 0.4474828541278839, -19.15464973449707, true)
-PSH:Place("Scout", -16.806255340576172, 0.4474826157093048, -18.427183151245117, true)
-PSH:Place("Scout", -16.810791015625, 0.4474823474884033, -17.61935043334961, true)
-
--- [ Wave 6 ] --
-PSH:Place("Scout", -16.841140747070312, 0.447482168674469, -17.03537368774414, true)
-PSH:Place("Scout", -24.698326110839844, 0.44748246669769287, -18.152372360229492, true)
-PSH:Place("Scout", -21.74755096435547, 0.4474821984767914, -17.846302032470703, true)
-PSH:Place("Scout", -23.112701416015625, 0.44748204946517944, -17.674015045166016, true)
-PSH:Place("Scout", -19.600418090820312, 0.447482705116272, -18.960464477539062, true)
-PSH:Place("Scout", -15.644378662109375, 0.4474821090698242, -16.94654083251953, true)
-
--- [ Wave 7 ] --
-PSH:Place("Scout", -14.939018249511719, 0.4474816918373108, -15.708528518676758, true)
-PSH:Place("Scout", -14.576248168945312, 0.4474814236164093, -14.961031913757324, true)
-PSH:Place("Scout", -14.390663146972656, 0.4474811851978302, -14.26764965057373, true)
-PSH:Place("Scout", -14.373085021972656, 0.4474811255931854, -14.038829803466797, true)
-PSH:Place("Scout", -15.134063720703125, 0.4474824070930481, -17.957569122314453, true)
-PSH:Place("Scout", -16.538528442382812, 0.44748273491859436, -18.83621597290039, true)
-PSH:Place("Scout", -15.891796112060547, 0.4474829435348511, -19.51176643371582, true)
-PSH:Place("Scout", -14.177566528320312, 0.44748222827911377, -17.4382266998291, true)
+-- [[ Wave 2 ]] --
+PSH:Place("Scout", -25.759, 0.447, -4.890)
+PSH:Place("Scout", -26.059, 0.447, -17.238)
 PSH:Upgrade(1)
-PSH:Upgrade(2)
 PSH:Upgrade(3)
+PSH:Upgrade(6)
+PSH:Upgrade(4)
+
+-- [[ Wave 3 ]] --
+PSH:Upgrade(2)
+PSH:Upgrade(5)
+PSH:Upgrade(2)
+PSH:Upgrade(1)
+
+-- [[ Wave 4 ]] --
+PSH:Upgrade(3)
+
+-- [[ Wave 5 ]] --
 PSH:Upgrade(4)
 PSH:Upgrade(5)
 PSH:Upgrade(6)
+
+-- [[ Wave 6 ]] --
+PSH:Place("Scout", -21.530, 0.447, -14.231)
+PSH:Place("Scout", -22.792, 0.447, -16.955)
+PSH:Upgrade(8)
+PSH:Upgrade(7)
 PSH:Upgrade(7)
 PSH:Upgrade(8)
+
+-- [[ Wave 7 ]] --
+PSH:Place("Scout", -16.785, 0.447, -7.559)
 PSH:Upgrade(9)
-
--- [ Wave 8 ] --
-PSH:Upgrade(1)
-PSH:Upgrade(2)
-PSH:Upgrade(3)
-PSH:Upgrade(4)
+PSH:Upgrade(9)
+PSH:Place("Scout", -18.396, 0.447, -14.073)
 PSH:Upgrade(10)
+PSH:Upgrade(10)
+PSH:Place("Scout", -19.476, 0.447, -17.027)
 
--- [ Wave 9 ] --
-PSH:Upgrade(1)
-PSH:Upgrade(5)
+-- [[ Wave 8 ]] --
 PSH:Upgrade(11)
+PSH:Upgrade(11)
+PSH:Place("Scout", -16.154, 0.447, -16.323)
 PSH:Upgrade(12)
+PSH:Upgrade(12)
+PSH:Place("Scout", -14.034, 0.447, -13.962)
 PSH:Upgrade(13)
-PSH:Upgrade(14)
-PSH:Upgrade(15)
-PSH:Upgrade(16)
-PSH:Upgrade(17)
-PSH:Upgrade(20)
-PSH:Upgrade(38)
+PSH:Upgrade(13)
+
+-- [[ Wave 9 ]] --
+PSH:Upgrade(3)
+PSH:Upgrade(1)
 PSH:Upgrade(2)
+
+-- [[ Wave 10 ]] --
+PSH:Upgrade(4)
+
+-- [[ Wave 11 ]] --
+PSH:Upgrade(5)
 PSH:Upgrade(6)
 
--- [ Wave 10 ] --
+-- [[ Wave 12 ]] --
+PSH:Place("Scout", -21.144, 0.447, -19.588)
+PSH:Upgrade(14)
+PSH:Upgrade(14)
+PSH:Upgrade(14)
+PSH:Upgrade(8)
+
+-- [[ Wave 13 ]] --
+PSH:Upgrade(7)
+PSH:Upgrade(11)
+PSH:Upgrade(10)
+
+-- [[ Wave 14 ]] --
+PSH:Upgrade(12)
+PSH:Upgrade(13)
+
+-- [[ Wave 15 ]] --
+PSH:Upgrade(9)
+PSH:Place("Scout", -23.612, 0.447, -2.222)
+PSH:Upgrade(15)
+PSH:Upgrade(15)
+
+-- [[ Wave 16 ]] --
+PSH:Upgrade(5)
+PSH:Upgrade(2)
+PSH:Upgrade(4)
+PSH:Upgrade(9)
+PSH:Upgrade(15)
+
+-- [[ Wave 17 ]] --
+PSH:Upgrade(15)
+PSH:Upgrade(1)
+
+-- [[ Wave 18 ]] --
+PSH:Upgrade(6)
+PSH:Upgrade(3)
+PSH:Upgrade(7)
+
+-- [[ Wave 19 ]] --
+PSH:Upgrade(14)
+PSH:Upgrade(10)
+
+-- [[ Wave 20 ]] --
+PSH:Upgrade(11)
+PSH:Place("Scout", -16.882, 0.447, -3.933)
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Upgrade(16)
+PSH:Place("Scout", -9.082, 0.447, -4.739)
+PSH:Upgrade(17)
+PSH:Upgrade(17)
+PSH:Upgrade(17)
+PSH:Upgrade(17)
+PSH:Place("Scout", -9.228, 0.447, -7.937)
 PSH:Upgrade(18)
+PSH:Upgrade(18)
+PSH:Upgrade(18)
+PSH:Upgrade(18)
+PSH:Place("Scout", -9.114, 0.447, -10.939)
 PSH:Upgrade(19)
-PSH:Upgrade(21)
-PSH:Upgrade(22)
-PSH:Upgrade(3)
-PSH:Upgrade(7)
-PSH:Upgrade(8)
-PSH:Upgrade(23)
-PSH:Upgrade(24)
-PSH:Upgrade(25)
-
--- [ Wave 11 ] --
-PSH:Upgrade(1)
-PSH:Upgrade(9)
-
--- [ Wave 12 ] --
-PSH:Upgrade(26)
-PSH:Upgrade(27)
-PSH:Upgrade(28)
-PSH:Upgrade(29)
-PSH:Upgrade(10)
-PSH:Upgrade(30)
-PSH:Upgrade(31)
-PSH:Upgrade(32)
-PSH:Upgrade(11)
-PSH:Upgrade(26)
-PSH:Upgrade(27)
-PSH:Upgrade(28)
-PSH:Upgrade(29)
-PSH:Upgrade(30)
-PSH:Upgrade(33)
-PSH:Upgrade(34)
-PSH:Upgrade(38)
-PSH:Upgrade(39)
-
--- [ Wave 13 ] --
-PSH:Upgrade(36)
-PSH:Upgrade(37)
-PSH:Upgrade(12)
 PSH:Upgrade(19)
-PSH:Upgrade(2)
-PSH:Upgrade(13)
-
--- [ Wave 14 ] --
-PSH:Upgrade(35)
-PSH:Upgrade(40)
-PSH:Upgrade(14)
-PSH:Upgrade(15)
-PSH:Upgrade(16)
-PSH:Upgrade(37)
-PSH:Upgrade(3)
-PSH:Upgrade(17)
-
--- [ Wave 15 ] --
-PSH:Upgrade(7)
-PSH:Upgrade(36)
-PSH:Upgrade(18)
-PSH:Upgrade(20)
-PSH:Upgrade(28)
-PSH:Upgrade(31)
-PSH:Upgrade(32)
-PSH:Upgrade(33)
-
--- [ Wave 16 ] --
-PSH:Upgrade(21)
-PSH:Upgrade(22)
-PSH:Upgrade(22)
-PSH:Upgrade(23)
-PSH:Upgrade(4)
-PSH:Upgrade(5)
-PSH:Upgrade(8)
-
--- [ Wave 17 ] --
-PSH:Upgrade(24)
-PSH:Upgrade(25)
-PSH:Upgrade(34)
-PSH:Upgrade(35)
-PSH:Upgrade(39)
-PSH:Upgrade(4)
-PSH:Upgrade(6)
-
--- [ Wave 18 ] --
-PSH:Upgrade(40)
-PSH:Upgrade(5)
-PSH:Upgrade(6)
-PSH:Upgrade(7)
-
--- [ Wave 19 ] --
-PSH:Upgrade(9)
-PSH:Upgrade(10)
-PSH:Upgrade(34)
-PSH:Upgrade(8)
-PSH:Upgrade(10)
-
--- [ Wave 20 ] --
-PSH:Upgrade(11)
-PSH:Upgrade(9)
-PSH:Upgrade(11)
-PSH:Upgrade(12)
-PSH:Upgrade(16)
-PSH:Upgrade(17)
-PSH:Upgrade(35)
-PSH:Upgrade(12)
-PSH:Upgrade(13)
-PSH:Upgrade(14)
-PSH:Upgrade(13)
-PSH:Upgrade(14)
-PSH:Upgrade(15)
-PSH:Upgrade(16)
-PSH:Upgrade(18)
-PSH:Upgrade(27)
-PSH:Upgrade(29)
-PSH:Upgrade(39)
-PSH:Upgrade(15)
-PSH:Upgrade(17)
-PSH:Upgrade(18)
-PSH:Upgrade(25)
-PSH:Upgrade(20)
-PSH:Upgrade(21)
-PSH:Upgrade(24)
-PSH:Upgrade(25)
+PSH:Upgrade(19)
+PSH:Upgrade(19)
