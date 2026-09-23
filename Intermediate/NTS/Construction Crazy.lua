@@ -1,10 +1,10 @@
-*-- [[*
-*-- Towers: Soldier, Shotgunner, None, None, None*
-*-- Mode: Intermediate*
-*-- GameInfo: Unknown*
-*-- Map: Construction Crazy*
-*-- Modifiers: None*
-*-- ]]*
+-- [[*
+-- Towers: Soldier, Shotgunner, None, None, None*
+-- Mode: Intermediate*
+-- GameInfo: Unknown*
+-- Map: Construction Crazy*
+-- Modifiers: None*
+-- ]]*
 -- [[ Wave 0 ]] --
 PSH:Place("Soldier", 2.016, 0.505, -26.162)
 PSH:Upgrade(1)
