@@ -59,10 +59,6 @@ getgenv().PickHubLOL = {
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Rocket%20Arena",
             },
-            ["Sugar Rush"] = { -- 
-                Loadout = { "Soldier", "Shotgunner" },
-                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/860939a8dd31b352038c5a5faf1fe4d42de704e6/Intermediate/NTS/Sugar%20Rush.lua",
-            },
             ["Pier Pressure"] = { -- 
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Pier%20Pressure.lua",
