@@ -1,0 +1,207 @@
+
+-- [[ Wave 1 ]] --
+PSH:Place("Scout", -5.477, 1.081, 58.173)
+PSH:Place("Scout", 5.537, 1.081, 58.139)
+PSH:Place("Scout", -2.437, 1.081, 58.001)
+PSH:Place("Scout", 1.196, 1.081, 58.001)
+PSH:Upgrade(2)
+PSH:Upgrade(4)
+PSH:Upgrade(1)
+PSH:Upgrade(3)
+PSH:Place("Scout", -3.137, 1.081, 61.077)
+
+-- [[ Wave 2 ]] --
+PSH:Upgrade(5)
+PSH:Place("Scout", 5.911, 1.081, 61.175)
+PSH:Upgrade(6)
+
+-- [[ Wave 3 ]] --
+PSH:Place("Scout", 2.789, 1.081, 60.770)
+PSH:Upgrade(7)
+PSH:Upgrade(7)
+PSH:Upgrade(6)
+
+-- [[ Wave 4 ]] --
+PSH:Place("Scout", 3.349, 1.400, 43.618)
+PSH:Place("Scout", -3.058, 1.400, 43.333)
+PSH:Upgrade(9)
+PSH:Upgrade(9)
+PSH:Upgrade(8)
+PSH:Upgrade(8)
+
+-- [[ Wave 5 ]] --
+PSH:Upgrade(2)
+PSH:Upgrade(5)
+
+-- [[ Wave 6 ]] --
+PSH:Upgrade(3)
+PSH:Place("Scout", 3.291, 1.400, 40.402)
+PSH:Place("Scout", -2.920, 1.400, 40.259)
+PSH:Upgrade(10)
+PSH:Upgrade(10)
+PSH:Upgrade(11)
+PSH:Upgrade(11)
+
+-- [[ Wave 7 ]] --
+PSH:Upgrade(1)
+PSH:Place("Scout", -13.896, 1.415, 58.988)
+PSH:Place("Scout", -13.804, 1.415, 55.757)
+PSH:Place("Scout", -16.533, 1.415, 57.087)
+PSH:Upgrade(14)
+PSH:Upgrade(12)
+PSH:Upgrade(13)
+PSH:Upgrade(13)
+PSH:Upgrade(12)
+PSH:Upgrade(14)
+
+-- [[ Wave 8 ]] --
+PSH:Place("Scout", 13.514, 1.415, 59.175)
+PSH:Place("Scout", 13.769, 1.415, 55.971)
+PSH:Place("Scout", 16.384, 1.415, 57.690)
+PSH:Upgrade(15)
+PSH:Upgrade(16)
+PSH:Upgrade(17)
+PSH:Upgrade(15)
+PSH:Upgrade(16)
+PSH:Upgrade(17)
+
+-- [[ Wave 9 ]] --
+PSH:Place("Scout", 5.093, 1.400, 37.646)
+PSH:Place("Scout", -5.277, 1.400, 38.209)
+PSH:Upgrade(19)
+PSH:Upgrade(19)
+PSH:Upgrade(18)
+PSH:Upgrade(18)
+PSH:Place("Scout", 13.849, 1.415, 52.836)
+PSH:Upgrade(20)
+PSH:Upgrade(20)
+PSH:Place("Scout", 16.568, 1.415, 54.449)
+PSH:Upgrade(21)
+PSH:Upgrade(21)
+
+-- [[ Wave 10 ]] --
+PSH:Place("Scout", -13.687, 1.415, 52.668)
+PSH:Upgrade(22)
+PSH:Upgrade(22)
+PSH:Place("Scout", -16.516, 1.415, 53.997)
+PSH:Upgrade(23)
+PSH:Upgrade(23)
+PSH:Place("Scout", -13.486, 1.415, 49.625)
+PSH:Place("Scout", -16.279, 1.415, 50.870)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
+PSH:Upgrade(24)
+PSH:Upgrade(24)
+PSH:Upgrade(24)
+
+-- [[ Wave 11 ]] --
+PSH:Upgrade(20)
+PSH:Upgrade(16)
+
+-- [[ Wave 12 ]] --
+PSH:Upgrade(21)
+PSH:Upgrade(17)
+PSH:Upgrade(8)
+PSH:Upgrade(9)
+
+-- [[ Wave 13 ]] --
+PSH:Upgrade(3)
+PSH:Upgrade(4)
+PSH:Upgrade(2)
+
+-- [[ Wave 14 ]] --
+PSH:Upgrade(6)
+PSH:Upgrade(7)
+
+-- [[ Wave 15 ]] --
+PSH:Upgrade(5)
+PSH:Upgrade(1)
+PSH:Upgrade(12)
+PSH:Upgrade(13)
+PSH:Upgrade(22)
+PSH:Upgrade(4)
+PSH:Place("Scout", 13.817, 1.415, 49.634)
+PSH:Place("Scout", 16.615, 1.415, 51.152)
+PSH:Upgrade(27)
+PSH:Upgrade(27)
+PSH:Upgrade(26)
+PSH:Upgrade(26)
+PSH:Upgrade(26)
+PSH:Upgrade(27)
+
+-- [[ Wave 16 ]] --
+PSH:Place("Scout", 16.539, 1.415, 48.148)
+PSH:Place("Scout", 13.920, 1.415, 46.451)
+PSH:Upgrade(29)
+PSH:Upgrade(29)
+PSH:Upgrade(28)
+PSH:Upgrade(28)
+PSH:Upgrade(28)
+PSH:Upgrade(29)
+PSH:Place("Scout", -2.906, 1.400, 36.044)
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+PSH:Upgrade(30)
+PSH:Place("Scout", 3.204, 1.400, 35.172)
+
+-- [[ Wave 17 ]] --
+PSH:Upgrade(31)
+PSH:Upgrade(31)
+PSH:Upgrade(31)
+PSH:Place("Scout", -18.467, 1.415, 59.559)
+PSH:Upgrade(32)
+PSH:Upgrade(32)
+PSH:Upgrade(32)
+PSH:Place("Scout", -19.263, 1.415, 55.219)
+PSH:Upgrade(33)
+PSH:Upgrade(33)
+PSH:Place("Scout", -19.229, 1.415, 51.987)
+PSH:Upgrade(34)
+PSH:Upgrade(34)
+PSH:Upgrade(33)
+PSH:Upgrade(34)
+PSH:Place("Scout", 14.102, 1.415, 43.432)
+PSH:Upgrade(35)
+PSH:Upgrade(35)
+PSH:Upgrade(35)
+
+-- [[ Wave 18 ]] --
+PSH:Place("Scout", 16.843, 1.415, 44.971)
+PSH:Upgrade(36)
+PSH:Upgrade(36)
+PSH:Upgrade(36)
+PSH:Upgrade(2)
+PSH:Upgrade(4)
+PSH:Upgrade(3)
+PSH:Upgrade(1)
+
+-- [[ Wave 19 ]] --
+PSH:Upgrade(6)
+PSH:Upgrade(7)
+PSH:Upgrade(5)
+PSH:Upgrade(9)
+PSH:Upgrade(8)
+PSH:Upgrade(29)
+
+-- [[ Wave 20 ]] --
+PSH:Upgrade(26)
+PSH:Upgrade(20)
+PSH:Upgrade(16)
+PSH:Upgrade(10)
+PSH:Upgrade(11)
+PSH:Upgrade(18)
+PSH:Upgrade(19)
+PSH:Upgrade(30)
+PSH:Upgrade(31)
+PSH:Upgrade(10)
+PSH:Upgrade(18)
+PSH:Upgrade(11)
+PSH:Upgrade(19)
+PSH:Upgrade(24)
+PSH:Upgrade(25)
+PSH:Upgrade(25)
+PSH:Upgrade(22)
+PSH:Upgrade(23)
+PSH:Upgrade(23)
+PSH:Upgrade(34)
+PSH:Upgrade(13)
