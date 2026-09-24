@@ -67,6 +67,10 @@ getgenv().PickHubLOL = {
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Pier%20Pressure.lua",
             },
+            ["Harbor"] = { -- 
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Harbor.lua",
+            },
         },
         Modifiers = {},
     },
