@@ -71,6 +71,10 @@ getgenv().PickHubLOL = {
                 Loadout = { "Soldier", "Shotgunner" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Portland.lua",
             },
+               ["Crystal Cave"] = { -- 
+                Loadout = { "Soldier", "Shotgunner" },
+                URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Intermediate/NTS/Crystal%20Cave.lua",
+            },
         },
         Modifiers = {},
     },
