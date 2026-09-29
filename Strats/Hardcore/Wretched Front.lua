@@ -32,7 +32,7 @@ getgenv().PickHubLOL = {
         Mode     = "Hardcore",
         Maps     = {
             ["Wretched Front"] = {
-                Loadout = { "Pyromancer", "Hunter" },
+                Loadout = { "Farm", "Boomerang", "Crook Boss" },
                 URL     = "https://raw.githubusercontent.com/8zj/aspoidhasouphsaohoasidjnmasaindoasbpgdas8udgouihassdhsaaiisaggdaghbouudsaktgdiysagdbuiagsigdas0gdpia/refs/heads/main/Hardcore/Losingstrat1.lua",
             },
         },
