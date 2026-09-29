@@ -1,5 +1,5 @@
 -- [[*
--- Towers: Farm, Boomerang, Crook Boss, None, None*
+-- Towers: Pyromancer, Hunter, None, None, None*
 -- Mode: Easy*
 -- GameInfo: Unknown*
 -- Map: Wretched Front*
@@ -8,86 +8,63 @@
 -- [[ Wave 0 ]] --
 
 -- [[ Wave 1 ]] --
-PSH:Place("Farm", -11.889, 1.326, 37.139)
-PSH:Place("Farm", -11.572, 1.420, 33.584)
-PSH:Place("Farm", -11.668, 1.489, 30.044)
-PSH:Place("Farm", -11.666, 1.545, 26.416)
-
--- [[ Wave 2 ]] --
-PSH:Place("Farm", -11.996, 1.219, 40.691)
-PSH:Place("Boomerang", 10.447, 1.136, 21.400)
+PSH:Place("Pyromancer", -0.773, 1.025, -35.392)
+PSH:SetTarget(1, "Random")
+PSH:SetTarget(1, "Farthest")
+PSH:Upgrade(1)
 
 -- [[ Wave 3 ]] --
-PSH:Upgrade(6)
-PSH:Upgrade(4)
-
--- [[ Wave 4 ]] --
-PSH:Upgrade(3)
-PSH:Upgrade(2)
 PSH:Upgrade(1)
-PSH:Upgrade(5)
 
 -- [[ Wave 5 ]] --
-PSH:Place("Boomerang", 7.276, 1.238, 21.612)
-PSH:Upgrade(7)
+PSH:Place("Pyromancer", -0.564, 0.986, -32.320)
+PSH:SetTarget(2, "Random")
+PSH:SetTarget(2, "Farthest")
+PSH:Upgrade(2)
 
 -- [[ Wave 6 ]] --
-PSH:Place("Boomerang", 8.845, 0.844, 18.863)
-PSH:Upgrade(8)
-PSH:Upgrade(8)
-
--- [[ Wave 7 ]] --
-PSH:Upgrade(4)
-PSH:Upgrade(3)
+PSH:Upgrade(2)
 
 -- [[ Wave 8 ]] --
-PSH:Upgrade(2)
 PSH:Upgrade(1)
-
--- [[ Wave 9 ]] --
-PSH:Upgrade(5)
-PSH:Upgrade(7)
-PSH:Upgrade(6)
-
--- [[ Wave 10 ]] --
-PSH:Place("Crook Boss", 4.277, 1.296, 21.464)
 
 -- [[ Wave 11 ]] --
-PSH:Upgrade(9)
+PSH:Place("Hunter", 9.236, 1.251, 22.043)
 
 -- [[ Wave 12 ]] --
-PSH:Upgrade(9)
+PSH:Place("Hunter", 6.183, 1.279, 21.813)
 
 -- [[ Wave 13 ]] --
-PSH:Upgrade(4)
-PSH:Upgrade(3)
+PSH:Place("Hunter", 3.117, 1.322, 21.718)
 
 -- [[ Wave 14 ]] --
-PSH:Upgrade(2)
-PSH:Upgrade(1)
+PSH:Place("Pyromancer", 5.456, 1.391, 32.873)
 
 -- [[ Wave 15 ]] --
-PSH:Upgrade(7)
-PSH:Upgrade(5)
+PSH:SetTarget(6, "Random")
+PSH:SetTarget(6, "Farthest")
+PSH:Upgrade(6)
+PSH:Upgrade(6)
 
 -- [[ Wave 16 ]] --
-PSH:Upgrade(6)
-PSH:Upgrade(8)
+PSH:Upgrade(2)
 
 -- [[ Wave 17 ]] --
-PSH:Place("Crook Boss", 1.253, 1.354, 21.701)
-PSH:Upgrade(10)
+PSH:Upgrade(3)
+PSH:Upgrade(4)
 
 -- [[ Wave 18 ]] --
-PSH:Upgrade(10)
+PSH:Upgrade(5)
+PSH:Place("Hunter", 0.007, 1.372, 21.735)
+PSH:Upgrade(7)
 
 -- [[ Wave 19 ]] --
-PSH:Place("Crook Boss", 2.756, 1.158, 18.642)
-PSH:Upgrade(11)
-PSH:Upgrade(11)
-
--- [[ Wave 21 ]] --
 PSH:Upgrade(6)
 
--- [[ Wave 22 ]] --
+-- [[ Wave 21 ]] --
+PSH:Place("Hunter", 8.501, 0.870, 18.990)
 PSH:Upgrade(8)
+
+-- [[ Wave 22 ]] --
+PSH:Place("Hunter", 4.210, 0.989, 18.726)
+PSH:Upgrade(9)
