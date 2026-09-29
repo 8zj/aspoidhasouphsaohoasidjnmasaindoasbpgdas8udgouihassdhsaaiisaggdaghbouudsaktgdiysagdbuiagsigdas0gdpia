@@ -1,5 +1,5 @@
 -- [[*
--- Towers: Farm, Boomerang, Crook Boss, Freezer, None*
+-- Towers: Farm, Boomerang, Crook Boss, None, None*
 -- Mode: Easy*
 -- GameInfo: Unknown*
 -- Map: Wretched Front*
