@@ -20,6 +20,7 @@ getgenv().PickHubLOL = {
         AutoMercenary   = false,
         AutoMilitary    = false,
         AutoNecromancer = false,
+        AutoSweeper     = false,
     },
     Urls = {
         Webhook  = "",
@@ -39,4 +40,4 @@ getgenv().PickHubLOL = {
         Modifiers = {},
     },
 }
-loadstring(game:HttpGet("http://pickscripthub.xyz/api/execute/tds-multi-map"))()
+loadstring(game:HttpGet("http://pickscripthub.xyz/api/execute/tds-tess-script"))()
