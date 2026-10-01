@@ -1,8 +1,8 @@
 getgenv().PickHubLOL = {
     Main = {
         AutoStrat       = true,
-        AutoRestart     = false,
-        AutoReturnLobby = true,
+        AutoRestart     = true,
+        AutoReturnLobby = false,
         AutoSkip        = true,
         SendWebhook     = false, 
         TimeScale       = 2,
