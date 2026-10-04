@@ -1,10 +1,3 @@
-*-- [[*
-*-- Towers: Scout, None, None, None, None*
-*-- Mode: Easy*
-*-- GameInfo: Unknown*
-*-- Map: Dead Ahead*
-*-- Modifiers: None*
-*-- ]]*
 -- [[ Wave 1 ]] --
 PSH:Place("Scout", 0.506, 0.950, -37.790)
 PSH:Upgrade(1)
