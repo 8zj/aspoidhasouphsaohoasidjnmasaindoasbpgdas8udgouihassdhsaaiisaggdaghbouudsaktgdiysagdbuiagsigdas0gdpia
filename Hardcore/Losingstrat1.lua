@@ -1,12 +1,3 @@
--- [[*
--- Towers: Farm, Boomerang, Crook Boss, None, None*
--- Mode: Easy*
--- GameInfo: Unknown*
--- Map: Wretched Front*
--- Modifiers: None*
--- ]]*
--- [[ Wave 0 ]] --
-
 -- [[ Wave 1 ]] --
 PSH:Place("Farm", -11.889, 1.326, 37.139)
 PSH:Place("Farm", -11.572, 1.420, 33.584)
