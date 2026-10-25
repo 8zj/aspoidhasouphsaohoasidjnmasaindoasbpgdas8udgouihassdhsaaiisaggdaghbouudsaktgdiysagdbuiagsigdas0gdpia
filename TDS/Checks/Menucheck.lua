@@ -70,8 +70,8 @@ local function queueBoot()
             pcall(function()
                 repeat task.wait() until game:IsLoaded()
 
-                if isfile and isfile("PSHBoot.lua") then
-                    loadstring(readfile("PSHBoot.lua"))()
+                if isfile and isfile("TDSHub.lua") then
+                    loadstring(readfile("TDSHub.lua"))()
                 end
             end)
         ]])
